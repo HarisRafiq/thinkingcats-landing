@@ -1,0 +1,266 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={`Pricing — ${SITE_TITLE}`}
+			description="Simple, transparent pricing for ThinkingCats. Start free, upgrade when you need more."
+		/>
+	</head>
+	<body>
+		<Header />
+
+		<main>
+			<div class="page-hero">
+				<h1>Simple pricing</h1>
+				<p>Start for free. Upgrade when you're ready.</p>
+			</div>
+
+			<div class="plans">
+				<!-- Free -->
+				<div class="plan">
+					<div class="plan-header">
+						<h2>Free</h2>
+						<div class="plan-price">
+							<span class="price">$0</span>
+							<span class="per">/ forever</span>
+						</div>
+					</div>
+					<ul class="features">
+						<li>✅ All blog posts</li>
+						<li>✅ RSS feed</li>
+						<li>✅ Community access</li>
+						<li>❌ Premium guides</li>
+						<li>❌ Early access</li>
+						<li>❌ Newsletter digest</li>
+					</ul>
+					<a href="/blog" class="plan-cta outline">Start reading</a>
+				</div>
+
+				<!-- Pro -->
+				<div class="plan featured">
+					<div class="plan-badge">Most popular</div>
+					<div class="plan-header">
+						<h2>Pro</h2>
+						<div class="plan-price">
+							<span class="price">$9</span>
+							<span class="per">/ month</span>
+						</div>
+					</div>
+					<ul class="features">
+						<li>✅ All blog posts</li>
+						<li>✅ RSS feed</li>
+						<li>✅ Community access</li>
+						<li>✅ Premium guides</li>
+						<li>✅ Early access to content</li>
+						<li>✅ Weekly newsletter digest</li>
+					</ul>
+					<a href="mailto:hello@thinkingcats.com?subject=Pro plan" class="plan-cta primary">Get Pro</a>
+				</div>
+
+				<!-- Team -->
+				<div class="plan">
+					<div class="plan-header">
+						<h2>Team</h2>
+						<div class="plan-price">
+							<span class="price">$39</span>
+							<span class="per">/ month</span>
+						</div>
+					</div>
+					<ul class="features">
+						<li>✅ Everything in Pro</li>
+						<li>✅ Up to 10 seats</li>
+						<li>✅ Private Slack channel</li>
+						<li>✅ Custom research requests</li>
+						<li>✅ Invoice billing</li>
+						<li>✅ Priority support</li>
+					</ul>
+					<a href="mailto:hello@thinkingcats.com?subject=Team plan" class="plan-cta outline">Contact us</a>
+				</div>
+			</div>
+
+			<div class="faq">
+				<h2>FAQ</h2>
+				<div class="faq-list">
+					<details>
+						<summary>Can I cancel anytime?</summary>
+						<p>Yes — cancel whenever you like with no questions asked.</p>
+					</details>
+					<details>
+						<summary>Is there a trial period?</summary>
+						<p>The Free tier lets you read all public content forever. Paid plans can be cancelled within 7 days for a full refund.</p>
+					</details>
+					<details>
+						<summary>Do you offer discounts for students?</summary>
+						<p>Yes! Email us with proof of student status and we'll set you up with 50% off Pro.</p>
+					</details>
+					<details>
+						<summary>What payment methods do you accept?</summary>
+						<p>We accept all major credit cards via Stripe. Invoicing is available on Team plans.</p>
+					</details>
+				</div>
+			</div>
+		</main>
+
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		width: 100%;
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 3em 1.5em;
+	}
+	.page-hero {
+		text-align: center;
+		margin-bottom: 3em;
+	}
+	.page-hero h1 {
+		font-size: 2.8em;
+		margin-bottom: 0.4em;
+	}
+	.page-hero p {
+		font-size: 1.1em;
+		color: rgb(var(--gray));
+		margin: 0;
+	}
+
+	/* Plans */
+	.plans {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 1.5em;
+		margin-bottom: 4em;
+		align-items: start;
+	}
+	.plan {
+		background: white;
+		border: 2px solid rgb(var(--gray-light));
+		border-radius: 16px;
+		padding: 2em;
+		position: relative;
+	}
+	.plan.featured {
+		border-color: var(--accent);
+		box-shadow: 0 0 0 4px rgba(35,55,255,0.08);
+	}
+	.plan-badge {
+		position: absolute;
+		top: -0.75em;
+		left: 50%;
+		transform: translateX(-50%);
+		background: var(--accent);
+		color: white;
+		font-size: 0.78em;
+		font-weight: 700;
+		padding: 0.3em 0.9em;
+		border-radius: 100px;
+		white-space: nowrap;
+	}
+	.plan-header h2 {
+		font-size: 1.3em;
+		margin-bottom: 0.4em;
+	}
+	.plan-price {
+		display: flex;
+		align-items: baseline;
+		gap: 0.25em;
+		margin-bottom: 1.5em;
+	}
+	.price {
+		font-size: 2.5em;
+		font-weight: 800;
+	}
+	.per {
+		font-size: 0.95em;
+		color: rgb(var(--gray));
+	}
+	.features {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 2em 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.65em;
+		font-size: 0.92em;
+	}
+	.plan-cta {
+		display: block;
+		text-align: center;
+		padding: 0.75em 1.5em;
+		border-radius: 8px;
+		font-weight: 600;
+		text-decoration: none;
+		font-size: 0.95em;
+		transition: all 0.15s;
+	}
+	.plan-cta.primary {
+		background: var(--accent);
+		color: white;
+	}
+	.plan-cta.primary:hover {
+		opacity: 0.88;
+		color: white;
+	}
+	.plan-cta.outline {
+		border: 2px solid rgb(var(--gray-light));
+		color: rgb(var(--black));
+	}
+	.plan-cta.outline:hover {
+		border-color: var(--accent);
+		color: var(--accent);
+	}
+
+	/* FAQ */
+	.faq {
+		max-width: 680px;
+		margin: 0 auto;
+	}
+	.faq h2 {
+		font-size: 1.8em;
+		margin-bottom: 1.25em;
+		text-align: center;
+	}
+	.faq-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75em;
+	}
+	details {
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 10px;
+		padding: 1em 1.25em;
+	}
+	summary {
+		font-weight: 600;
+		cursor: pointer;
+		user-select: none;
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+		font-size: 0.95em;
+	}
+	summary::after {
+		content: "+";
+		font-size: 1.2em;
+		line-height: 1;
+		color: var(--accent);
+	}
+	details[open] summary::after {
+		content: "−";
+	}
+	details p {
+		margin: 0.75em 0 0;
+		font-size: 0.9em;
+		color: rgb(var(--gray));
+		line-height: 1.6;
+	}
+</style>

@@ -1,0 +1,48 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			title={`About — ${SITE_TITLE}`}
+			description="We're a small team obsessed with making AI approachable, interesting, and useful for everyday people."
+		/>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>About ThinkingCats</h1>
+
+			<p>
+				<strong>ThinkingCats</strong> is a publication exploring artificial intelligence through
+				clear, honest writing. We cover tools, concepts, and ideas that matter — without the hype.
+			</p>
+
+			<h2>Our mission</h2>
+			<p>
+				We believe good ideas deserve clear explanations. Our goal is to make AI accessible to
+				anyone curious enough to ask "how does this actually work?"
+			</p>
+
+			<h2>What we write about</h2>
+			<ul>
+				<li>Practical AI tools and how to use them</li>
+				<li>Research papers distilled into plain English</li>
+				<li>Opinions on where AI is heading</li>
+				<li>Tutorials and hands-on guides</li>
+			</ul>
+
+			<h2>Get in touch</h2>
+			<p>
+				Have a story idea, feedback, or just want to say hi?
+				Email us at <a href="mailto:hello@thinkingcats.com">hello@thinkingcats.com</a>.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
