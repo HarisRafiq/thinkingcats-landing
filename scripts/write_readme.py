@@ -1,3 +1,9 @@
+"""Write the README"""
+import pathlib, textwrap
+
+BASE = pathlib.Path('/Users/haris/Desktop/thinkingcats-landing')
+
+readme = textwrap.dedent(r"""
 # ThinkingCats
 
 > SEO-optimised landing page + blog for [thinkingcats.com](https://thinkingcats.com)
@@ -114,3 +120,7 @@ Then enable HTTPS in **Settings → Pages → Enforce HTTPS**.
 - **@astrojs/sitemap** — auto-generated sitemap.xml
 - **RSS** — built-in feed at `/rss.xml`
 - **GitHub Actions** — free CI/CD deploy to GitHub Pages
+""").lstrip()
+
+(BASE / 'README.md').write_text(readme)
+print("README written.")
