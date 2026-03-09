@@ -10,6 +10,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://thinkingcats.com',
   integrations: [mdx(), sitemap()],
+  base: '/thinkingcats-landing/', // e.g., '/my-astro-site/'
 
   vite: {
     plugins: [tailwindcss()],

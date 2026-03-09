@@ -1,0 +1,665 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+const description = 'ThinkingCats for Small Business — the AI marketing team you can actually afford. Strategy, content, and campaigns from one brief. From $29/mo.';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`${SITE_TITLE} for Small Business`} description={description} />
+	</head>
+	<body>
+		<Header />
+
+		<!-- ── HERO ── -->
+		<section class="hero-section">
+			<div class="hero-glow" aria-hidden="true"></div>
+			<div class="hero-inner">
+				<div class="hero-left">
+					<div class="hero-badge">
+						<svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+						Built for Small Business
+					</div>
+
+					<h1 class="hero-h1">
+						<span class="hero-white">The AI marketing team<br />your business</span><br />
+						<span class="hero-gradient">can actually afford.</span>
+					</h1>
+
+					<p class="hero-sub">
+						ThinkingCats replaces your Jasper, Buffer, and freelance marketer — for <strong>$29/month</strong>. Get market intelligence, a campaign strategy, and publish-ready content from one brief.
+					</p>
+
+					<div class="hero-cta">
+						<a href="/pricing" class="btn-primary">
+							Try it free — no credit card
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="arrow-icon"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+						</a>
+					</div>
+
+					<div class="hero-trust">
+						<div class="trust-item"><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Replaces your $200/hr consultant</div>
+						<div class="trust-item"><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Blog + social from one brief</div>
+						<div class="trust-item"><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>From $29/mo — cancel anytime</div>
+					</div>
+				</div>
+
+				<div class="hero-right">
+					<div class="mockup-card">
+						<div class="mockup-titlebar">
+							<span class="dot dot-red"></span>
+							<span class="dot dot-amber"></span>
+							<span class="dot dot-green"></span>
+							<span class="mockup-title">ThinkingCats · Director</span>
+						</div>
+						<div class="mockup-body">
+							<div class="mockup-section">
+								<p class="label-tiny">Your brief</p>
+								<div class="brief-box">We just launched a new coffee subscription box for small offices — $49/month, free shipping.</div>
+							</div>
+							<div class="status-box">
+								<div class="spinner"></div>
+								<div>
+									<p class="status-title">Analysing brief…</p>
+									<p class="status-sub">Reading context, classifying post type, extracting facts</p>
+								</div>
+							</div>
+							<div class="strategy-box">
+								<p class="label-tiny">Proposed strategy</p>
+								<p class="strategy-title">Pain-point · "Your office coffee is costing you more than you think"</p>
+								<div class="pill-row">
+									<span class="pill">Blog post</span>
+									<span class="pill">Social carousel</span>
+									<span class="pill">Launch email</span>
+								</div>
+							</div>
+							<button class="generate-btn">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="zap-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+								Generate blog + carousel
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── COST COMPARISON ── -->
+		<section class="cost-bar">
+			<div class="cost-grid">
+				<div class="cost-item">
+					<p class="cost-label">Freelance marketer</p>
+					<p class="cost-price cost-red">$75–$150 / hr</p>
+					<p class="cost-note">Per hour, project minimum</p>
+				</div>
+				<div class="cost-item">
+					<p class="cost-label">Part-time marketing hire</p>
+					<p class="cost-price cost-amber">$2,500–$5,000 / mo</p>
+					<p class="cost-note">Salary, no strategy guaranteed</p>
+				</div>
+				<div class="cost-item cost-highlight">
+					<p class="cost-label">ThinkingCats</p>
+					<p class="cost-price cost-green">from $29 / mo</p>
+					<p class="cost-note">Strategy + content, cancel anytime</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── PAIN ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">The real problem</p>
+				<h2 class="section-h2">Why marketing never gets done.</h2>
+			</div>
+			<div class="pain-grid">
+				<div class="pain-card">
+					<div class="pain-icon-wrap amber-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+					</div>
+					<h3>You're the owner AND the marketer</h3>
+					<p>Between operations, sales, and customer service, marketing is always the last thing to get done — and the first to be abandoned.</p>
+				</div>
+				<div class="pain-card">
+					<div class="pain-icon-wrap rose-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+					</div>
+					<h3>You don't know which channel to bet on</h3>
+					<p>Blog? Instagram? LinkedIn? Google Ads? Without a strategy, you spend money and time on random channels and see no measurable return.</p>
+				</div>
+				<div class="pain-card">
+					<div class="pain-icon-wrap orange-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+					</div>
+					<h3>You pay for 6 tools and still get no results</h3>
+					<p>Canva, Buffer, Jasper, Surfer, Mailchimp — the average SMB spends $200–$300/month on tools but has no strategy to connect them.</p>
+				</div>
+			</div>
+			<p class="pain-tagline">ThinkingCats solves all three — strategy first, content second.</p>
+		</section>
+
+		<!-- ── WHO IT'S FOR ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">Who it's for</p>
+				<h2 class="section-h2">Built for people who wear too many hats.</h2>
+				<p class="section-sub">Pick the profile that sounds like you.</p>
+			</div>
+			<div class="who-grid">
+				<div class="who-card">
+					<div class="who-icon-wrap amber-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+					</div>
+					<div>
+						<h3>Solo Founders</h3>
+						<p class="who-subtitle amber-text">You run everything — including marketing</p>
+					</div>
+					<ul class="who-list">
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>No dedicated marketing person</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Need consistent content without consistent hours</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Want to look like a company, not a one-person shop</li>
+					</ul>
+				</div>
+				<div class="who-card">
+					<div class="who-icon-wrap indigo-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+					</div>
+					<div>
+						<h3>Local Businesses</h3>
+						<p class="who-subtitle indigo-text">Restaurants, salons, studios, clinics</p>
+					</div>
+					<ul class="who-list">
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Need to show up on Google and social</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Promotions, seasonal campaigns, announcements</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Build a loyal customer base with content</li>
+					</ul>
+				</div>
+				<div class="who-card">
+					<div class="who-icon-wrap purple-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+					</div>
+					<div>
+						<h3>Small Teams (2–20)</h3>
+						<p class="who-subtitle purple-text">Marketing is someone's side job</p>
+					</div>
+					<ul class="who-list">
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>One person doing marketing + three other roles</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Need to scale output without scaling headcount</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Want professional quality without agency prices</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── HOW IT WORKS ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">How it works</p>
+				<h2 class="section-h2">From idea to published content in 3 steps.</h2>
+			</div>
+
+			<div class="steps-list">
+				<!-- Step 1 -->
+				<div class="step-row">
+					<div class="step-text">
+						<div class="step-number violet-icon">1</div>
+						<h3>Tell us about your business</h3>
+						<p>Drop in a brief — a product launch, a promotion, or just "I need content this week." ThinkingCats scans your market, competitors, and trending topics automatically.</p>
+					</div>
+					<div class="step-visual">
+						<div class="step-mockup">
+							<div class="feed-header">
+								<div class="feed-dot violet-dot"></div>
+								<span>Market Intelligence</span>
+							</div>
+							<div class="feed-items">
+								<div class="feed-item"><span class="feed-source">Industry</span><span class="feed-title">Office coffee market growing 12% YoY</span></div>
+								<div class="feed-item"><span class="feed-source">Competitor</span><span class="feed-title">BlueBottle launched B2B plan last month</span></div>
+								<div class="feed-item"><span class="feed-source">Trend</span><span class="feed-title">"workplace perks" trending on LinkedIn</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Step 2 -->
+				<div class="step-row step-row-reverse">
+					<div class="step-text">
+						<div class="step-number indigo-icon">2</div>
+						<h3>Review the strategy</h3>
+						<p>ThinkingCats proposes campaign ideas with the right angle, content format, and channel mix — all based on your market data and business goals.</p>
+					</div>
+					<div class="step-visual">
+						<div class="step-mockup">
+							<div class="feed-header">
+								<div class="feed-dot indigo-dot"></div>
+								<span>Campaign Ideas</span>
+							</div>
+							<div class="campaign-ideas">
+								<div class="campaign-card"><strong>Pain-point angle</strong><br /><span class="campaign-sub">"Your office coffee is costing you more than you think"</span></div>
+								<div class="campaign-card"><strong>Social proof angle</strong><br /><span class="campaign-sub">"Why 200+ offices switched to subscription coffee"</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Step 3 -->
+				<div class="step-row">
+					<div class="step-text">
+						<div class="step-number purple-icon">3</div>
+						<h3>Get publish-ready content</h3>
+						<p>Blog post, social carousel, email copy — all generated from your brief. Copy, paste, publish. Your content calendar is done for the week.</p>
+					</div>
+					<div class="step-visual">
+						<div class="step-mockup">
+							<div class="output-grid">
+								<div class="output-card">
+									<div class="output-label">Blog Post</div>
+									<p class="output-preview">Is your office coffee budget quietly draining $2,400/year? Here's how subscription…</p>
+								</div>
+								<div class="output-card">
+									<div class="output-label">Social Carousel</div>
+									<p class="output-preview">Slide 1: "The hidden cost of bad office coffee"<br />Slide 2: $200/mo average spend…</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── CONTENT TYPES ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">Content types</p>
+				<h2 class="section-h2">Every content type a small business needs.</h2>
+			</div>
+			<div class="types-grid">
+				<div class="type-card">
+					<div class="type-icon amber-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+					<h4>Blog Post</h4>
+					<p>SEO-optimised articles that bring traffic from Google and build authority.</p>
+				</div>
+				<div class="type-card">
+					<div class="type-icon indigo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+					<h4>Social Carousel</h4>
+					<p>Swipeable content for Instagram, LinkedIn, and Facebook.</p>
+				</div>
+				<div class="type-card">
+					<div class="type-icon purple-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+					<h4>Brand Story</h4>
+					<p>Your origin story, mission, and values — written to connect.</p>
+				</div>
+				<div class="type-card">
+					<div class="type-icon rose-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+					<h4>Product Announcement</h4>
+					<p>Launch posts that create buzz and drive early sales.</p>
+				</div>
+				<div class="type-card">
+					<div class="type-icon emerald-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg></div>
+					<h4>Email Newsletter</h4>
+					<p>Keep customers engaged with regular updates and offers.</p>
+				</div>
+				<div class="type-card">
+					<div class="type-icon orange-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+					<h4>Educational Content</h4>
+					<p>How-to guides and tips that position you as the expert.</p>
+				</div>
+				<div class="type-card">
+					<div class="type-icon violet-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+					<h4>Trend Commentary</h4>
+					<p>Timely takes on industry trends that get shared.</p>
+				</div>
+				<div class="type-card">
+					<div class="type-icon sky-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></div>
+					<h4>Promotion / Sale</h4>
+					<p>Seasonal offers and limited-time deals that convert.</p>
+				</div>
+				<div class="type-card">
+					<div class="type-icon pink-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+					<h4>Customer Spotlight</h4>
+					<p>Social proof stories that turn happy customers into content.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── TESTIMONIALS ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">What owners say</p>
+				<h2 class="section-h2">Small businesses that stopped guessing.</h2>
+			</div>
+			<div class="testimonials-grid">
+				<div class="testimonial-card">
+					<div class="stars">
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+					</div>
+					<p class="testimonial-text">"I was spending 8 hours a week on social media with nothing to show for it. ThinkingCats gave me a strategy and the content to execute it. My engagement tripled."</p>
+					<div class="testimonial-metric">
+						<span class="metric-value">3x engagement</span>
+						<span class="metric-label">in the first 60 days</span>
+					</div>
+					<div class="testimonial-author">
+						<div class="author-avatar">RK</div>
+						<div>
+							<p class="author-name">Rachel K.</p>
+							<p class="author-role">Owner, Bloom Studio (yoga & wellness)</p>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-card">
+					<div class="stars">
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+					</div>
+					<p class="testimonial-text">"We cancelled Jasper, Buffer, and our freelance writer. ThinkingCats does what all three did — but with actual strategy behind it. Saving us $400/month."</p>
+					<div class="testimonial-metric">
+						<span class="metric-value">$400/mo saved</span>
+						<span class="metric-label">replaced 3 tools + freelancer</span>
+					</div>
+					<div class="testimonial-author">
+						<div class="author-avatar">DM</div>
+						<div>
+							<p class="author-name">David M.</p>
+							<p class="author-role">Co-founder, Gearshift Auto Detailing</p>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-card">
+					<div class="stars">
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+					</div>
+					<p class="testimonial-text">"As a bakery owner, I never had time for marketing. Now I paste 'new seasonal menu' and get a blog, Instagram post, and email in 2 minutes. It's unreal."</p>
+					<div class="testimonial-metric">
+						<span class="metric-value">2 minutes</span>
+						<span class="metric-label">from brief to full content suite</span>
+					</div>
+					<div class="testimonial-author">
+						<div class="author-avatar">LP</div>
+						<div>
+							<p class="author-name">Lisa P.</p>
+							<p class="author-role">Owner, Sunrise Bakery</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── FAQ ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">FAQ</p>
+				<h2 class="section-h2">Common questions from small business owners.</h2>
+			</div>
+			<div class="faq-list">
+				<div class="faq-item">
+					<button class="faq-q" aria-expanded="false">
+						<span>Is this just another AI writing tool?</span>
+						<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
+					<div class="faq-a"><p>No. Most AI tools just write — you still have to decide what to write about, which channel to post on, and what angle to take. ThinkingCats does the thinking first: it analyses your market, proposes a strategy, then generates the content.</p></div>
+				</div>
+				<div class="faq-item">
+					<button class="faq-q" aria-expanded="false">
+						<span>Do I need marketing experience?</span>
+						<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
+					<div class="faq-a"><p>Not at all. ThinkingCats is built for non-marketers. Just tell it about your business and what you're promoting — it handles the strategy, angles, and content formats for you.</p></div>
+				</div>
+				<div class="faq-item">
+					<button class="faq-q" aria-expanded="false">
+						<span>What if my business is really niche?</span>
+						<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
+					<div class="faq-a"><p>ThinkingCats works across industries — from plumbers to SaaS startups to yoga studios. The AI adapts its strategy and tone to your specific market and audience.</p></div>
+				</div>
+				<div class="faq-item">
+					<button class="faq-q" aria-expanded="false">
+						<span>How many posts can I create per month?</span>
+						<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
+					<div class="faq-a"><p>The Starter plan includes 30 posts/month — more than enough for most small businesses. If you need more, the Pro plan offers 150 posts/month across multiple brands.</p></div>
+				</div>
+				<div class="faq-item">
+					<button class="faq-q" aria-expanded="false">
+						<span>Can I cancel anytime?</span>
+						<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
+					<div class="faq-a"><p>Absolutely. No contracts, no commitments. Cancel from your dashboard in one click. Your content is always yours to keep.</p></div>
+				</div>
+				<div class="faq-item">
+					<button class="faq-q" aria-expanded="false">
+						<span>How is this different from ChatGPT?</span>
+						<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
+					<div class="faq-a"><p>ChatGPT is a blank page — you have to prompt-engineer every request. ThinkingCats is purpose-built for marketing: it analyses your market, proposes strategy, and generates content across channels from a single brief.</p></div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── FINAL CTA ── -->
+		<section class="final-cta">
+			<p class="eyebrow">Start today</p>
+			<h2 class="section-h2">Stop winging your marketing.<br />Start with a plan.</h2>
+			<p class="cta-sub">Join 10,000+ small businesses that market smarter — not harder.</p>
+			<a href="/pricing" class="btn-primary">
+				Try it free — no credit card
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="arrow-icon"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+			</a>
+		</section>
+
+		<Footer />
+	</body>
+</html>
+
+<style>
+	/* ── HERO ── */
+	.hero-section{position:relative;padding:9rem 1.5rem 5rem;overflow:hidden}
+	.hero-glow{position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(99,102,241,0.12) 0%,transparent 70%);pointer-events:none}
+	.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1152px;margin:0 auto;align-items:center}
+	.hero-left{display:flex;flex-direction:column;gap:1.5rem}
+	.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.2);font-size:12px;font-weight:700;color:rgba(129,140,248,0.8);width:fit-content}
+	.badge-icon{width:14px;height:14px;color:rgba(129,140,248,0.7)}
+	.hero-h1{font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-0.03em}
+	.hero-white{color:#fff}
+	.hero-gradient{background:linear-gradient(90deg,#818cf8,#a78bfa,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+	.hero-sub{font-size:1.05rem;line-height:1.7;color:rgba(255,255,255,0.45);max-width:520px}
+	.hero-sub strong{color:rgba(255,255,255,0.7);font-weight:600}
+	.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+	.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:#fff;color:#000;border-radius:12px;font-size:15px;font-weight:900;text-decoration:none;transition:background 0.15s,transform 0.1s}
+	.btn-primary:hover{background:rgba(255,255,255,0.92);color:#000}
+	.btn-primary:active{transform:scale(0.98)}
+	.arrow-icon{width:16px;height:16px}
+	.hero-trust{display:flex;flex-direction:column;gap:8px}
+	.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.4);font-weight:500}
+	.check-icon{width:16px;height:16px;color:#34d399;flex-shrink:0}
+	.check-icon.emerald{color:#34d399}
+
+	/* ── MOCKUP ── */
+	.hero-right{display:flex;justify-content:center}
+	.mockup-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;max-width:440px;width:100%}
+	.mockup-titlebar{display:flex;align-items:center;gap:6px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.06)}
+	.dot{width:10px;height:10px;border-radius:50%}
+	.dot-red{background:#ff5f57}
+	.dot-amber{background:#ffbd2e}
+	.dot-green{background:#28c840}
+	.mockup-title{margin-left:8px;font-size:11px;color:rgba(255,255,255,0.3);font-weight:600}
+	.mockup-body{padding:20px;display:flex;flex-direction:column;gap:16px}
+	.label-tiny{font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.3);font-weight:700;margin-bottom:8px}
+	.brief-box{font-size:13px;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:12px 14px;line-height:1.5}
+	.status-box{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.12)}
+	.spinner{width:20px;height:20px;border:2px solid rgba(129,140,248,0.2);border-top-color:#818cf8;border-radius:50%;animation:spin 1s linear infinite;flex-shrink:0}
+	@keyframes spin{to{transform:rotate(360deg)}}
+	.status-title{font-size:12px;font-weight:700;color:rgba(255,255,255,0.7)}
+	.status-sub{font-size:11px;color:rgba(255,255,255,0.35);margin-top:2px}
+	.strategy-box{padding:14px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07)}
+	.strategy-title{font-size:13px;color:rgba(255,255,255,0.6);margin-top:8px;line-height:1.5}
+	.pill-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+	.pill{font-size:11px;padding:4px 10px;border-radius:100px;background:rgba(129,140,248,0.1);border:1px solid rgba(129,140,248,0.15);color:rgba(129,140,248,0.7);font-weight:600}
+	.generate-btn{width:100%;padding:12px;border-radius:10px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;font-size:13px;font-weight:800;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity 0.15s}
+	.generate-btn:hover{opacity:0.92}
+	.zap-icon{width:16px;height:16px}
+
+	/* ── COST BAR ── */
+	.cost-bar{padding:2.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)}
+	.cost-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1152px;margin:0 auto;text-align:center}
+	.cost-item{padding:1.5rem;border-radius:16px}
+	.cost-label{font-size:13px;color:rgba(255,255,255,0.4);font-weight:600}
+	.cost-price{font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:900;margin-top:6px}
+	.cost-red{color:#f87171}
+	.cost-amber{color:#fbbf24}
+	.cost-green{color:#34d399}
+	.cost-note{font-size:12px;color:rgba(255,255,255,0.25);margin-top:4px}
+	.cost-highlight{background:rgba(52,211,153,0.05);border:1px solid rgba(52,211,153,0.12);border-radius:16px}
+
+	/* ── SECTIONS ── */
+	.section-pad{padding:6rem 1.5rem}
+	.section-center{text-align:center;margin-bottom:3rem}
+	.eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(129,140,248,0.6);margin-bottom:12px}
+	.section-h2{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:900;color:#fff;letter-spacing:-0.03em;line-height:1.15}
+	.section-sub{font-size:1rem;color:rgba(255,255,255,0.35);margin-top:12px}
+
+	/* ── PAIN ── */
+	.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1152px;margin:0 auto}
+	.pain-card{padding:2rem;border-radius:16px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);transition:background 0.15s,border-color 0.15s}
+	.pain-card:hover{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.12)}
+	.pain-card h3{font-size:15px;font-weight:900;color:#fff;margin-top:16px;margin-bottom:8px}
+	.pain-card p{font-size:14px;color:rgba(255,255,255,0.4);line-height:1.65}
+	.pain-icon-wrap{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+	.icon-sm{width:20px;height:20px}
+	.amber-icon{background:rgba(251,191,36,0.1);color:#fbbf24}
+	.rose-icon{background:rgba(251,113,133,0.1);color:#fb7185}
+	.orange-icon{background:rgba(251,146,60,0.1);color:#fb923c}
+	.indigo-icon{background:rgba(99,102,241,0.1);color:#818cf8}
+	.purple-icon{background:rgba(168,85,247,0.1);color:#a855f7}
+	.violet-icon{background:rgba(139,92,246,0.1);color:#8b5cf6}
+	.emerald-icon{background:rgba(52,211,153,0.1);color:#34d399}
+	.sky-icon{background:rgba(56,189,248,0.1);color:#38bdf8}
+	.pink-icon{background:rgba(236,72,153,0.1);color:#ec4899}
+	.pain-tagline{text-align:center;margin-top:2.5rem;font-size:15px;color:rgba(255,255,255,0.35);font-weight:500}
+
+	/* ── WHO / FEATURES ── */
+	.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1152px;margin:0 auto}
+	.who-card{padding:2rem;border-radius:16px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);display:flex;flex-direction:column;gap:16px;transition:background 0.15s,border-color 0.15s}
+	.who-card:hover{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.12)}
+	.who-card h3{font-size:15px;font-weight:900;color:#fff}
+	.who-subtitle{font-size:13px;font-weight:600;margin-top:2px}
+	.amber-text{color:rgba(251,191,36,0.7)}
+	.indigo-text{color:rgba(129,140,248,0.7)}
+	.purple-text{color:rgba(168,85,247,0.7)}
+	.who-icon-wrap{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+	.who-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+	.who-list li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,0.45);line-height:1.5}
+
+	/* ── STEPS ── */
+	.steps-list{display:flex;flex-direction:column;gap:4rem;max-width:1152px;margin:0 auto}
+	.step-row{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+	.step-row-reverse{direction:rtl}
+	.step-row-reverse > *{direction:ltr}
+	.step-text{display:flex;flex-direction:column;gap:12px}
+	.step-number{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff}
+	.step-text h3{font-size:clamp(1.2rem,2.5vw,1.5rem);font-weight:900;color:#fff;letter-spacing:-0.02em}
+	.step-text p{font-size:15px;color:rgba(255,255,255,0.4);line-height:1.7;max-width:480px}
+	.step-visual{display:flex;justify-content:center}
+	.step-mockup{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;width:100%;max-width:420px}
+	.feed-header{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,0.06);font-size:12px;font-weight:700;color:rgba(255,255,255,0.5)}
+	.feed-dot{width:8px;height:8px;border-radius:50%}
+	.violet-dot{background:#8b5cf6}
+	.indigo-dot{background:#818cf8}
+	.feed-items{padding:12px;display:flex;flex-direction:column;gap:8px}
+	.feed-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)}
+	.feed-source{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:rgba(129,140,248,0.6);min-width:72px}
+	.feed-title{font-size:12px;color:rgba(255,255,255,0.5)}
+	.campaign-ideas{padding:14px;display:flex;flex-direction:column;gap:10px}
+	.campaign-card{padding:14px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);font-size:13px;color:rgba(255,255,255,0.6);line-height:1.5}
+	.campaign-card strong{color:rgba(255,255,255,0.8)}
+	.campaign-sub{font-size:12px;color:rgba(255,255,255,0.35)}
+	.output-grid{padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+	.output-card{padding:14px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06)}
+	.output-label{font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:rgba(129,140,248,0.6);font-weight:700;margin-bottom:8px}
+	.output-preview{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.6}
+
+	/* ── CONTENT TYPES ── */
+	.types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:1152px;margin:0 auto}
+	.type-card{padding:1.5rem;border-radius:16px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);transition:background 0.15s,border-color 0.15s}
+	.type-card:hover{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.12)}
+	.type-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+	.type-card h4{font-size:14px;font-weight:800;color:#fff;margin-bottom:6px}
+	.type-card p{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.6}
+
+	/* ── TESTIMONIALS ── */
+	.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1152px;margin:0 auto}
+	.testimonial-card{padding:2rem;border-radius:16px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);display:flex;flex-direction:column;gap:16px}
+	.stars{display:flex;gap:2px}
+	.star{width:16px;height:16px;color:#fbbf24}
+	.testimonial-text{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;flex:1}
+	.testimonial-metric{padding:12px;border-radius:10px;background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.1)}
+	.metric-value{font-size:18px;font-weight:900;color:#34d399;display:block}
+	.metric-label{font-size:12px;color:rgba(52,211,153,0.5);margin-top:2px;display:block}
+	.testimonial-author{display:flex;align-items:center;gap:12px}
+	.author-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#a855f7);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0}
+	.author-name{font-size:13px;font-weight:700;color:rgba(255,255,255,0.7)}
+	.author-role{font-size:12px;color:rgba(255,255,255,0.3)}
+
+	/* ── FAQ ── */
+	.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:2px}
+	.faq-item{border-bottom:1px solid rgba(255,255,255,0.06)}
+	.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 0;background:none;border:none;cursor:pointer;text-align:left;font-size:15px;font-weight:700;color:rgba(255,255,255,0.7);transition:color 0.15s}
+	.faq-q:hover{color:#fff}
+	.faq-chevron{width:18px;height:18px;color:rgba(255,255,255,0.3);transition:transform 0.2s;flex-shrink:0}
+	.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+	.faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,0.4);line-height:1.7;max-width:600px}
+	.faq-open .faq-chevron{transform:rotate(180deg)}
+
+	/* ── FINAL CTA ── */
+	.final-cta{text-align:center;padding:6rem 1.5rem}
+	.cta-sub{font-size:1rem;color:rgba(255,255,255,0.35);margin:12px 0 2rem}
+
+	/* ── RESPONSIVE ── */
+	@media(max-width:900px){
+		.hero-inner{grid-template-columns:1fr}
+		.hero-right{margin-top:2rem}
+		.step-row,.step-row-reverse{grid-template-columns:1fr}
+		.step-row-reverse{direction:ltr}
+	}
+	@media(max-width:768px){
+		.pain-grid,.who-grid,.testimonials-grid{grid-template-columns:1fr}
+		.output-grid{grid-template-columns:1fr}
+	}
+	@media(max-width:640px){
+		.cost-grid{grid-template-columns:1fr}
+		.types-grid{grid-template-columns:1fr}
+	}
+</style>
+
+<script>
+	document.querySelectorAll('.faq-q').forEach(btn => {
+		btn.addEventListener('click', () => {
+			const item = btn.parentElement;
+			const answer = item?.querySelector('.faq-a');
+			const isOpen = btn.getAttribute('aria-expanded') === 'true';
+			document.querySelectorAll('.faq-q').forEach(b => {
+				b.setAttribute('aria-expanded', 'false');
+				b.parentElement?.classList.remove('faq-open');
+				const a = b.parentElement?.querySelector('.faq-a');
+				if (a instanceof HTMLElement) a.style.maxHeight = '0';
+			});
+			if (!isOpen && answer instanceof HTMLElement) {
+				btn.setAttribute('aria-expanded', 'true');
+				item?.classList.add('faq-open');
+				answer.style.maxHeight = answer.scrollHeight + 'px';
+			}
+		});
+	});
+</script>

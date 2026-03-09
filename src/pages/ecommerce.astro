@@ -1,0 +1,665 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+const description = 'ThinkingCats for ECommerce — AI-powered product descriptions, collection stories, email campaigns, and social content. Scale your content with your catalog.';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`${SITE_TITLE} for ECommerce`} description={description} />
+	</head>
+	<body>
+		<Header />
+
+		<!-- ── HERO ── -->
+		<section class="hero-section">
+			<div class="hero-glow" aria-hidden="true"></div>
+			<div class="hero-inner">
+				<div class="hero-left">
+					<div class="hero-badge">
+						<svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+						Built for ECommerce
+					</div>
+
+					<h1 class="hero-h1">
+						<span class="hero-white">Turn your product catalog<br />into a content engine —</span><br />
+						<span class="hero-gradient">at scale.</span>
+					</h1>
+
+					<p class="hero-sub">
+						ThinkingCats writes product descriptions, collection stories, email campaigns, and social content — for <strong>$29/month instead of $15K/month agencies</strong>. One brief, every channel.
+					</p>
+
+					<div class="hero-cta">
+						<a href="/pricing" class="btn-primary">
+							Try it free — no credit card
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="arrow-icon"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+						</a>
+					</div>
+
+					<div class="hero-trust">
+						<div class="trust-item"><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Product descriptions in 30 seconds</div>
+						<div class="trust-item"><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Launch campaigns from one brief</div>
+						<div class="trust-item"><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>From $29/mo — cancel anytime</div>
+					</div>
+				</div>
+
+				<div class="hero-right">
+					<div class="mockup-card">
+						<div class="mockup-titlebar">
+							<span class="dot dot-red"></span>
+							<span class="dot dot-amber"></span>
+							<span class="dot dot-green"></span>
+							<span class="mockup-title">ThinkingCats · Director</span>
+						</div>
+						<div class="mockup-body">
+							<div class="mockup-section">
+								<p class="label-tiny">Your brief</p>
+								<div class="brief-box">Launching our new organic skincare line — 12 products, all clean beauty, vegan, $28–$64 price range.</div>
+							</div>
+							<div class="status-box">
+								<div class="spinner"></div>
+								<div>
+									<p class="status-title">Analysing product line…</p>
+									<p class="status-sub">Scanning market, competitor positioning, trending angles</p>
+								</div>
+							</div>
+							<div class="strategy-box">
+								<p class="label-tiny">Proposed strategy</p>
+								<p class="strategy-title">Ingredient-led · "What's actually in your skincare — and why it matters"</p>
+								<div class="pill-row">
+									<span class="pill">Product descriptions</span>
+									<span class="pill">Launch email</span>
+									<span class="pill">Social carousel</span>
+								</div>
+							</div>
+							<button class="generate-btn">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="zap-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+								Generate launch content
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── COST COMPARISON ── -->
+		<section class="cost-bar">
+			<div class="cost-grid">
+				<div class="cost-item">
+					<p class="cost-label">Content agency</p>
+					<p class="cost-price cost-red">$5,000–$15,000 / mo</p>
+					<p class="cost-note">Retainer, 3-month minimum</p>
+				</div>
+				<div class="cost-item">
+					<p class="cost-label">In-house copywriter</p>
+					<p class="cost-price cost-amber">$4,000–$6,000 / mo</p>
+					<p class="cost-note">Salary, benefits, management</p>
+				</div>
+				<div class="cost-item cost-highlight">
+					<p class="cost-label">ThinkingCats</p>
+					<p class="cost-price cost-green">from $29 / mo</p>
+					<p class="cost-note">Unlimited products, cancel anytime</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── PAIN ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">The real problem</p>
+				<h2 class="section-h2">Your catalog grows faster than your content.</h2>
+			</div>
+			<div class="pain-grid">
+				<div class="pain-card">
+					<div class="pain-icon-wrap amber-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+					</div>
+					<h3>Hundreds of SKUs, zero time to write</h3>
+					<p>Every product needs a description, every collection needs a story, every launch needs a campaign. At 50+ products, the content backlog becomes impossible.</p>
+				</div>
+				<div class="pain-card">
+					<div class="pain-icon-wrap rose-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+					</div>
+					<h3>Seasonal campaigns never end</h3>
+					<p>Black Friday, Valentine's Day, Summer Drop, Back-to-School — every season needs fresh content. You're always behind on the calendar.</p>
+				</div>
+				<div class="pain-card">
+					<div class="pain-icon-wrap orange-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+					</div>
+					<h3>Generic AI copy kills conversions</h3>
+					<p>You tried ChatGPT — but "luxurious and versatile" product descriptions don't sell. You need copy that understands your brand voice, audience, and product positioning.</p>
+				</div>
+			</div>
+			<p class="pain-tagline">ThinkingCats writes like your best copywriter — at the speed your catalog demands.</p>
+		</section>
+
+		<!-- ── WHAT YOU GET ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">Content for every channel</p>
+				<h2 class="section-h2">One product brief. Full launch content.</h2>
+				<p class="section-sub">Here's what ThinkingCats creates from a single product or collection brief.</p>
+			</div>
+			<div class="who-grid">
+				<div class="who-card">
+					<div class="who-icon-wrap amber-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+					</div>
+					<div>
+						<h3>Product Descriptions</h3>
+						<p class="who-subtitle amber-text">Copy that converts, not just describes</p>
+					</div>
+					<ul class="who-list">
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Benefit-led copy, not feature dumps</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Consistent brand voice across your catalog</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>SEO-optimised for product search</li>
+					</ul>
+				</div>
+				<div class="who-card">
+					<div class="who-icon-wrap indigo-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+					</div>
+					<div>
+						<h3>Email Campaigns</h3>
+						<p class="who-subtitle indigo-text">Launch, nurture, and win-back flows</p>
+					</div>
+					<ul class="who-list">
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Product launch announcements</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Abandoned cart and win-back sequences</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Seasonal sale campaigns</li>
+					</ul>
+				</div>
+				<div class="who-card">
+					<div class="who-icon-wrap purple-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+					</div>
+					<div>
+						<h3>Social Content</h3>
+						<p class="who-subtitle purple-text">Carousels, captions, and stories</p>
+					</div>
+					<ul class="who-list">
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Product showcase carousels</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>UGC-style captions that feel native</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Collection drops and restocks</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── HOW IT WORKS ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">How it works</p>
+				<h2 class="section-h2">From product to content in 3 steps.</h2>
+			</div>
+
+			<div class="steps-list">
+				<!-- Step 1 -->
+				<div class="step-row">
+					<div class="step-text">
+						<div class="step-number violet-icon">1</div>
+						<h3>Drop in your product details</h3>
+						<p>Paste your product name, key features, price, and target customer. ThinkingCats scans competitors, trending angles, and your brand context automatically.</p>
+					</div>
+					<div class="step-visual">
+						<div class="step-mockup">
+							<div class="feed-header">
+								<div class="feed-dot violet-dot"></div>
+								<span>Market Intel</span>
+							</div>
+							<div class="feed-items">
+								<div class="feed-item"><span class="feed-source">Competitor</span><span class="feed-title">Glossier dropped new serum at $34</span></div>
+								<div class="feed-item"><span class="feed-source">Trend</span><span class="feed-title">"clean beauty" searches up 28% MoM</span></div>
+								<div class="feed-item"><span class="feed-source">Audience</span><span class="feed-title">25–34 F, ingredient-conscious shoppers</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Step 2 -->
+				<div class="step-row step-row-reverse">
+					<div class="step-text">
+						<div class="step-number indigo-icon">2</div>
+						<h3>Review your launch strategy</h3>
+						<p>ThinkingCats proposes the best positioning — ingredient-led, lifestyle, or social proof — plus the content types and channels that match your audience.</p>
+					</div>
+					<div class="step-visual">
+						<div class="step-mockup">
+							<div class="feed-header">
+								<div class="feed-dot indigo-dot"></div>
+								<span>Launch Strategy</span>
+							</div>
+							<div class="campaign-ideas">
+								<div class="campaign-card"><strong>Ingredient-led angle</strong><br /><span class="campaign-sub">"What's actually in your serum — and what's not"</span></div>
+								<div class="campaign-card"><strong>Before/after angle</strong><br /><span class="campaign-sub">"30 days with clean skincare: real results, no filters"</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Step 3 -->
+				<div class="step-row">
+					<div class="step-text">
+						<div class="step-number purple-icon">3</div>
+						<h3>Get publish-ready content</h3>
+						<p>Product descriptions, email sequences, social carousels, blog content — all generated, all on-brand, ready to paste into Shopify, Klaviyo, or wherever you publish.</p>
+					</div>
+					<div class="step-visual">
+						<div class="step-mockup">
+							<div class="output-grid">
+								<div class="output-card">
+									<div class="output-label">Product Page</div>
+									<p class="output-preview">Meet your new daily glow. Our Vitamin C Serum delivers clinically-proven brightening…</p>
+								</div>
+								<div class="output-card">
+									<div class="output-label">Launch Email</div>
+									<p class="output-preview">Subject: "Your skin has been asking for this"<br />Preview: Finally — clean beauty that…</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── CONTENT TYPES ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">Content types</p>
+				<h2 class="section-h2">Every content type an ecommerce brand needs.</h2>
+			</div>
+			<div class="types-grid">
+				<div class="type-card">
+					<div class="type-icon amber-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div>
+					<h4>Product Description</h4>
+					<p>Benefit-led copy that converts browsers into buyers.</p>
+				</div>
+				<div class="type-card">
+					<div class="type-icon indigo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></div>
+					<h4>Collection Story</h4>
+					<p>Narrative copy that ties your collection together with a theme.</p>
+				</div>
+				<div class="type-card">
+					<div class="type-icon purple-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg></div>
+					<h4>Email Campaign</h4>
+					<p>Launch sequences, sale announcements, and win-back flows.</p>
+				</div>
+				<div class="type-card">
+					<div class="type-icon rose-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+					<h4>Social Carousel</h4>
+					<p>Product showcases, collection drops, and seasonal promos.</p>
+				</div>
+				<div class="type-card">
+					<div class="type-icon emerald-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+					<h4>Blog / SEO Content</h4>
+					<p>Buying guides and how-to articles that rank and convert.</p>
+				</div>
+				<div class="type-card">
+					<div class="type-icon orange-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+					<h4>Product Launch</h4>
+					<p>Full launch campaigns across email, social, and your site.</p>
+				</div>
+				<div class="type-card">
+					<div class="type-icon violet-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg></div>
+					<h4>Ad Copy</h4>
+					<p>Meta and Google ad copy that stops the scroll and drives clicks.</p>
+				</div>
+				<div class="type-card">
+					<div class="type-icon sky-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+					<h4>Brand Story</h4>
+					<p>Your About page, mission statement, and brand narrative.</p>
+				</div>
+				<div class="type-card">
+					<div class="type-icon pink-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+					<h4>Customer Spotlight</h4>
+					<p>Turn reviews and UGC into polished social proof content.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── TESTIMONIALS ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">What brands say</p>
+				<h2 class="section-h2">ECommerce brands that scaled their content.</h2>
+			</div>
+			<div class="testimonials-grid">
+				<div class="testimonial-card">
+					<div class="stars">
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+					</div>
+					<p class="testimonial-text">"We had 200 products with generic descriptions. ThinkingCats rewrote them all with benefit-led copy. Our conversion rate went up 18% in the first month."</p>
+					<div class="testimonial-metric">
+						<span class="metric-value">+18% conversion</span>
+						<span class="metric-label">after rewriting product descriptions</span>
+					</div>
+					<div class="testimonial-author">
+						<div class="author-avatar">AK</div>
+						<div>
+							<p class="author-name">Amanda K.</p>
+							<p class="author-role">Founder, Nourish & Bloom (skincare DTC)</p>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-card">
+					<div class="stars">
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+					</div>
+					<p class="testimonial-text">"We launch 4 collections a year and each one needs a full content suite. ThinkingCats cut our content production time by 80%. Our agency couldn't keep up — this can."</p>
+					<div class="testimonial-metric">
+						<span class="metric-value">80% faster</span>
+						<span class="metric-label">content production per collection</span>
+					</div>
+					<div class="testimonial-author">
+						<div class="author-avatar">JW</div>
+						<div>
+							<p class="author-name">James W.</p>
+							<p class="author-role">Head of Marketing, Trailhead Outdoor Co.</p>
+						</div>
+					</div>
+				</div>
+				<div class="testimonial-card">
+					<div class="stars">
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+						<svg viewBox="0 0 24 24" fill="currentColor" class="star"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+					</div>
+					<p class="testimonial-text">"The email campaigns it writes actually sound like us. We paste the brief, get a full Klaviyo-ready sequence, and our open rates have never been better."</p>
+					<div class="testimonial-metric">
+						<span class="metric-value">42% open rate</span>
+						<span class="metric-label">on AI-generated email campaigns</span>
+					</div>
+					<div class="testimonial-author">
+						<div class="author-avatar">NC</div>
+						<div>
+							<p class="author-name">Nina C.</p>
+							<p class="author-role">Ecommerce Manager, Velvet & Vine</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── FAQ ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">FAQ</p>
+				<h2 class="section-h2">Common questions from ecommerce brands.</h2>
+			</div>
+			<div class="faq-list">
+				<div class="faq-item">
+					<button class="faq-q" aria-expanded="false">
+						<span>Does it integrate with Shopify / WooCommerce?</span>
+						<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
+					<div class="faq-a"><p>ThinkingCats generates content you can paste directly into any platform — Shopify, WooCommerce, BigCommerce, Magento, or custom. No integration needed — just copy and paste.</p></div>
+				</div>
+				<div class="faq-item">
+					<button class="faq-q" aria-expanded="false">
+						<span>Can it maintain our brand voice across 100+ products?</span>
+						<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
+					<div class="faq-a"><p>Yes. ThinkingCats learns your brand context from your first brief and keeps tone, vocabulary, and positioning consistent across every piece of content — whether it's product #1 or product #200.</p></div>
+				</div>
+				<div class="faq-item">
+					<button class="faq-q" aria-expanded="false">
+						<span>Will the descriptions be unique for SEO?</span>
+						<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
+					<div class="faq-a"><p>Every description is generated fresh — no templates, no duplicate content. Each product gets unique copy that targets relevant keywords for product search optimisation.</p></div>
+				</div>
+				<div class="faq-item">
+					<button class="faq-q" aria-expanded="false">
+						<span>Can I generate content for seasonal campaigns?</span>
+						<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
+					<div class="faq-a"><p>Absolutely. Just mention the campaign — Black Friday, Summer Sale, Holiday Gift Guide — and ThinkingCats generates themed content across email, social, and your site.</p></div>
+				</div>
+				<div class="faq-item">
+					<button class="faq-q" aria-expanded="false">
+						<span>How is this different from ChatGPT?</span>
+						<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
+					<div class="faq-a"><p>ChatGPT is a blank page — you have to prompt-engineer every request. ThinkingCats is purpose-built for marketing: it analyses your market, proposes strategy, and generates content across channels from a single brief.</p></div>
+				</div>
+				<div class="faq-item">
+					<button class="faq-q" aria-expanded="false">
+						<span>Can I cancel anytime?</span>
+						<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+					</button>
+					<div class="faq-a"><p>Yes. No contracts, no commitments. Cancel from your dashboard in one click. All generated content is yours to keep.</p></div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── FINAL CTA ── -->
+		<section class="final-cta">
+			<p class="eyebrow">Start today</p>
+			<h2 class="section-h2">Stop writing product copy one by one.<br />Start scaling your content.</h2>
+			<p class="cta-sub">Join thousands of ecommerce brands that content smarter — not harder.</p>
+			<a href="/pricing" class="btn-primary">
+				Try it free — no credit card
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="arrow-icon"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+			</a>
+		</section>
+
+		<Footer />
+	</body>
+</html>
+
+<style>
+	/* ── HERO ── */
+	.hero-section{position:relative;padding:9rem 1.5rem 5rem;overflow:hidden}
+	.hero-glow{position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(99,102,241,0.12) 0%,transparent 70%);pointer-events:none}
+	.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:1152px;margin:0 auto;align-items:center}
+	.hero-left{display:flex;flex-direction:column;gap:1.5rem}
+	.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:100px;background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.2);font-size:12px;font-weight:700;color:rgba(129,140,248,0.8);width:fit-content}
+	.badge-icon{width:14px;height:14px;color:rgba(129,140,248,0.7)}
+	.hero-h1{font-size:clamp(2.2rem,4.5vw,3.4rem);font-weight:900;line-height:1.1;letter-spacing:-0.03em}
+	.hero-white{color:#fff}
+	.hero-gradient{background:linear-gradient(90deg,#818cf8,#a78bfa,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+	.hero-sub{font-size:1.05rem;line-height:1.7;color:rgba(255,255,255,0.45);max-width:520px}
+	.hero-sub strong{color:rgba(255,255,255,0.7);font-weight:600}
+	.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+	.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;background:#fff;color:#000;border-radius:12px;font-size:15px;font-weight:900;text-decoration:none;transition:background 0.15s,transform 0.1s}
+	.btn-primary:hover{background:rgba(255,255,255,0.92);color:#000}
+	.btn-primary:active{transform:scale(0.98)}
+	.arrow-icon{width:16px;height:16px}
+	.hero-trust{display:flex;flex-direction:column;gap:8px}
+	.trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,0.4);font-weight:500}
+	.check-icon{width:16px;height:16px;color:#34d399;flex-shrink:0}
+	.check-icon.emerald{color:#34d399}
+
+	/* ── MOCKUP ── */
+	.hero-right{display:flex;justify-content:center}
+	.mockup-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;max-width:440px;width:100%}
+	.mockup-titlebar{display:flex;align-items:center;gap:6px;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.06)}
+	.dot{width:10px;height:10px;border-radius:50%}
+	.dot-red{background:#ff5f57}
+	.dot-amber{background:#ffbd2e}
+	.dot-green{background:#28c840}
+	.mockup-title{margin-left:8px;font-size:11px;color:rgba(255,255,255,0.3);font-weight:600}
+	.mockup-body{padding:20px;display:flex;flex-direction:column;gap:16px}
+	.label-tiny{font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.3);font-weight:700;margin-bottom:8px}
+	.brief-box{font-size:13px;color:rgba(255,255,255,0.6);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:12px 14px;line-height:1.5}
+	.status-box{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.12)}
+	.spinner{width:20px;height:20px;border:2px solid rgba(129,140,248,0.2);border-top-color:#818cf8;border-radius:50%;animation:spin 1s linear infinite;flex-shrink:0}
+	@keyframes spin{to{transform:rotate(360deg)}}
+	.status-title{font-size:12px;font-weight:700;color:rgba(255,255,255,0.7)}
+	.status-sub{font-size:11px;color:rgba(255,255,255,0.35);margin-top:2px}
+	.strategy-box{padding:14px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07)}
+	.strategy-title{font-size:13px;color:rgba(255,255,255,0.6);margin-top:8px;line-height:1.5}
+	.pill-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+	.pill{font-size:11px;padding:4px 10px;border-radius:100px;background:rgba(129,140,248,0.1);border:1px solid rgba(129,140,248,0.15);color:rgba(129,140,248,0.7);font-weight:600}
+	.generate-btn{width:100%;padding:12px;border-radius:10px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;font-size:13px;font-weight:800;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity 0.15s}
+	.generate-btn:hover{opacity:0.92}
+	.zap-icon{width:16px;height:16px}
+
+	/* ── COST BAR ── */
+	.cost-bar{padding:2.5rem 1.5rem;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)}
+	.cost-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1152px;margin:0 auto;text-align:center}
+	.cost-item{padding:1.5rem;border-radius:16px}
+	.cost-label{font-size:13px;color:rgba(255,255,255,0.4);font-weight:600}
+	.cost-price{font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:900;margin-top:6px}
+	.cost-red{color:#f87171}
+	.cost-amber{color:#fbbf24}
+	.cost-green{color:#34d399}
+	.cost-note{font-size:12px;color:rgba(255,255,255,0.25);margin-top:4px}
+	.cost-highlight{background:rgba(52,211,153,0.05);border:1px solid rgba(52,211,153,0.12);border-radius:16px}
+
+	/* ── SECTIONS ── */
+	.section-pad{padding:6rem 1.5rem}
+	.section-center{text-align:center;margin-bottom:3rem}
+	.eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(129,140,248,0.6);margin-bottom:12px}
+	.section-h2{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:900;color:#fff;letter-spacing:-0.03em;line-height:1.15}
+	.section-sub{font-size:1rem;color:rgba(255,255,255,0.35);margin-top:12px}
+
+	/* ── PAIN ── */
+	.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1152px;margin:0 auto}
+	.pain-card{padding:2rem;border-radius:16px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);transition:background 0.15s,border-color 0.15s}
+	.pain-card:hover{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.12)}
+	.pain-card h3{font-size:15px;font-weight:900;color:#fff;margin-top:16px;margin-bottom:8px}
+	.pain-card p{font-size:14px;color:rgba(255,255,255,0.4);line-height:1.65}
+	.pain-icon-wrap{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+	.icon-sm{width:20px;height:20px}
+	.amber-icon{background:rgba(251,191,36,0.1);color:#fbbf24}
+	.rose-icon{background:rgba(251,113,133,0.1);color:#fb7185}
+	.orange-icon{background:rgba(251,146,60,0.1);color:#fb923c}
+	.indigo-icon{background:rgba(99,102,241,0.1);color:#818cf8}
+	.purple-icon{background:rgba(168,85,247,0.1);color:#a855f7}
+	.violet-icon{background:rgba(139,92,246,0.1);color:#8b5cf6}
+	.emerald-icon{background:rgba(52,211,153,0.1);color:#34d399}
+	.sky-icon{background:rgba(56,189,248,0.1);color:#38bdf8}
+	.pink-icon{background:rgba(236,72,153,0.1);color:#ec4899}
+	.pain-tagline{text-align:center;margin-top:2.5rem;font-size:15px;color:rgba(255,255,255,0.35);font-weight:500}
+
+	/* ── WHO / FEATURES ── */
+	.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1152px;margin:0 auto}
+	.who-card{padding:2rem;border-radius:16px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);display:flex;flex-direction:column;gap:16px;transition:background 0.15s,border-color 0.15s}
+	.who-card:hover{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.12)}
+	.who-card h3{font-size:15px;font-weight:900;color:#fff}
+	.who-subtitle{font-size:13px;font-weight:600;margin-top:2px}
+	.amber-text{color:rgba(251,191,36,0.7)}
+	.indigo-text{color:rgba(129,140,248,0.7)}
+	.purple-text{color:rgba(168,85,247,0.7)}
+	.who-icon-wrap{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+	.who-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+	.who-list li{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:rgba(255,255,255,0.45);line-height:1.5}
+
+	/* ── STEPS ── */
+	.steps-list{display:flex;flex-direction:column;gap:4rem;max-width:1152px;margin:0 auto}
+	.step-row{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+	.step-row-reverse{direction:rtl}
+	.step-row-reverse > *{direction:ltr}
+	.step-text{display:flex;flex-direction:column;gap:12px}
+	.step-number{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#fff}
+	.step-text h3{font-size:clamp(1.2rem,2.5vw,1.5rem);font-weight:900;color:#fff;letter-spacing:-0.02em}
+	.step-text p{font-size:15px;color:rgba(255,255,255,0.4);line-height:1.7;max-width:480px}
+	.step-visual{display:flex;justify-content:center}
+	.step-mockup{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;width:100%;max-width:420px}
+	.feed-header{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,0.06);font-size:12px;font-weight:700;color:rgba(255,255,255,0.5)}
+	.feed-dot{width:8px;height:8px;border-radius:50%}
+	.violet-dot{background:#8b5cf6}
+	.indigo-dot{background:#818cf8}
+	.feed-items{padding:12px;display:flex;flex-direction:column;gap:8px}
+	.feed-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.05)}
+	.feed-source{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:rgba(129,140,248,0.6);min-width:72px}
+	.feed-title{font-size:12px;color:rgba(255,255,255,0.5)}
+	.campaign-ideas{padding:14px;display:flex;flex-direction:column;gap:10px}
+	.campaign-card{padding:14px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);font-size:13px;color:rgba(255,255,255,0.6);line-height:1.5}
+	.campaign-card strong{color:rgba(255,255,255,0.8)}
+	.campaign-sub{font-size:12px;color:rgba(255,255,255,0.35)}
+	.output-grid{padding:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+	.output-card{padding:14px;border-radius:10px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06)}
+	.output-label{font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:rgba(129,140,248,0.6);font-weight:700;margin-bottom:8px}
+	.output-preview{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.6}
+
+	/* ── CONTENT TYPES ── */
+	.types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:1152px;margin:0 auto}
+	.type-card{padding:1.5rem;border-radius:16px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);transition:background 0.15s,border-color 0.15s}
+	.type-card:hover{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.12)}
+	.type-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+	.type-card h4{font-size:14px;font-weight:800;color:#fff;margin-bottom:6px}
+	.type-card p{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.6}
+
+	/* ── TESTIMONIALS ── */
+	.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1152px;margin:0 auto}
+	.testimonial-card{padding:2rem;border-radius:16px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);display:flex;flex-direction:column;gap:16px}
+	.stars{display:flex;gap:2px}
+	.star{width:16px;height:16px;color:#fbbf24}
+	.testimonial-text{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;flex:1}
+	.testimonial-metric{padding:12px;border-radius:10px;background:rgba(52,211,153,0.06);border:1px solid rgba(52,211,153,0.1)}
+	.metric-value{font-size:18px;font-weight:900;color:#34d399;display:block}
+	.metric-label{font-size:12px;color:rgba(52,211,153,0.5);margin-top:2px;display:block}
+	.testimonial-author{display:flex;align-items:center;gap:12px}
+	.author-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#a855f7);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0}
+	.author-name{font-size:13px;font-weight:700;color:rgba(255,255,255,0.7)}
+	.author-role{font-size:12px;color:rgba(255,255,255,0.3)}
+
+	/* ── FAQ ── */
+	.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:2px}
+	.faq-item{border-bottom:1px solid rgba(255,255,255,0.06)}
+	.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 0;background:none;border:none;cursor:pointer;text-align:left;font-size:15px;font-weight:700;color:rgba(255,255,255,0.7);transition:color 0.15s}
+	.faq-q:hover{color:#fff}
+	.faq-chevron{width:18px;height:18px;color:rgba(255,255,255,0.3);transition:transform 0.2s;flex-shrink:0}
+	.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+	.faq-a p{padding:0 0 20px;font-size:14px;color:rgba(255,255,255,0.4);line-height:1.7;max-width:600px}
+	.faq-open .faq-chevron{transform:rotate(180deg)}
+
+	/* ── FINAL CTA ── */
+	.final-cta{text-align:center;padding:6rem 1.5rem}
+	.cta-sub{font-size:1rem;color:rgba(255,255,255,0.35);margin:12px 0 2rem}
+
+	/* ── RESPONSIVE ── */
+	@media(max-width:900px){
+		.hero-inner{grid-template-columns:1fr}
+		.hero-right{margin-top:2rem}
+		.step-row,.step-row-reverse{grid-template-columns:1fr}
+		.step-row-reverse{direction:ltr}
+	}
+	@media(max-width:768px){
+		.pain-grid,.who-grid,.testimonials-grid{grid-template-columns:1fr}
+		.output-grid{grid-template-columns:1fr}
+	}
+	@media(max-width:640px){
+		.cost-grid{grid-template-columns:1fr}
+		.types-grid{grid-template-columns:1fr}
+	}
+</style>
+
+<script>
+	document.querySelectorAll('.faq-q').forEach(btn => {
+		btn.addEventListener('click', () => {
+			const item = btn.parentElement;
+			const answer = item?.querySelector('.faq-a');
+			const isOpen = btn.getAttribute('aria-expanded') === 'true';
+			document.querySelectorAll('.faq-q').forEach(b => {
+				b.setAttribute('aria-expanded', 'false');
+				b.parentElement?.classList.remove('faq-open');
+				const a = b.parentElement?.querySelector('.faq-a');
+				if (a instanceof HTMLElement) a.style.maxHeight = '0';
+			});
+			if (!isOpen && answer instanceof HTMLElement) {
+				btn.setAttribute('aria-expanded', 'true');
+				item?.classList.add('faq-open');
+				answer.style.maxHeight = answer.scrollHeight + 'px';
+			}
+		});
+	});
+</script>
