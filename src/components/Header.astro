@@ -1,87 +1,96 @@
 ---
 import { SITE_TITLE } from '../consts';
-import HeaderLink from './HeaderLink.astro';
 ---
 
-<header>
-	<nav>
+<header class="site-header">
+	<nav class="site-nav">
 		<a href="/" class="site-logo">
-			<span class="logo-icon">🐱</span>
+			<span class="logo-mark">TC</span>
 			<span>{SITE_TITLE}</span>
 		</a>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/pricing">Pricing</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
+		<div class="nav-links">
+			<a href="/blog" class="nav-link">Blog</a>
+			<a href="/pricing" class="nav-link">Pricing</a>
+			<a href="/about" class="nav-link nav-link-muted">About</a>
+			<a href="/pricing" class="nav-cta">Start for free</a>
 		</div>
 	</nav>
 </header>
 
 <style>
-	header {
-		margin: 0;
-		padding: 0 1.5em;
-		background: white;
-		box-shadow: 0 1px 0 rgba(0,0,0,0.08);
-		position: sticky;
+	.site-header {
+		position: fixed;
 		top: 0;
+		left: 0;
+		right: 0;
 		z-index: 50;
+		padding: 0 1.5rem;
+		background: rgba(8,8,8,0.8);
+		backdrop-filter: blur(24px);
+		-webkit-backdrop-filter: blur(24px);
+		border-bottom: 1px solid rgba(255,255,255,0.05);
 	}
-	nav {
+	.site-nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		max-width: 1100px;
+		max-width: 1152px;
 		margin: 0 auto;
-		height: 64px;
+		height: 60px;
 	}
 	.site-logo {
 		display: flex;
 		align-items: center;
-		gap: 0.5em;
-		font-size: 1.15em;
-		font-weight: 700;
-		color: rgb(var(--black));
+		gap: 8px;
+		font-size: 15px;
+		font-weight: 900;
+		color: #fff;
 		text-decoration: none;
+		letter-spacing: -0.02em;
 	}
-	.logo-icon {
-		font-size: 1.4em;
-		line-height: 1;
-	}
-	.site-logo:hover {
-		color: var(--accent);
-	}
-	.internal-links {
+	.site-logo:hover { color: #fff; }
+	.logo-mark {
+		width: 28px;
+		height: 28px;
+		background: linear-gradient(135deg, #6366f1, #a855f7);
+		border-radius: 8px;
 		display: flex;
 		align-items: center;
-		gap: 0.1em;
+		justify-content: center;
+		font-size: 10px;
+		font-weight: 900;
+		color: #fff;
+		letter-spacing: 0.03em;
 	}
-	.internal-links a {
-		padding: 0.45em 0.75em;
-		color: rgb(var(--gray-dark));
-		border-radius: 6px;
+	.nav-links {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+	}
+	.nav-link {
+		font-size: 13px;
+		font-weight: 600;
+		color: rgba(255,255,255,0.5);
 		text-decoration: none;
-		font-size: 0.9em;
-		font-weight: 500;
-		transition: background 0.15s, color 0.15s;
-		border-bottom: none;
+		padding: 6px 10px;
+		border-radius: 8px;
+		transition: color 0.15s;
 	}
-	.internal-links a:hover {
-		background: rgb(var(--gray-light));
-		color: rgb(var(--black));
+	.nav-link:hover { color: rgba(255,255,255,0.85); }
+	.nav-link-muted { color: rgba(255,255,255,0.35); }
+	.nav-cta {
+		margin-left: 8px;
+		padding: 8px 16px;
+		background: #fff;
+		color: #000;
+		border-radius: 10px;
+		font-size: 13px;
+		font-weight: 900;
+		text-decoration: none;
+		transition: background 0.15s;
 	}
-	.internal-links a.active {
-		color: var(--accent);
-		background: rgba(35,55,255,0.07);
-	}
+	.nav-cta:hover { background: rgba(255,255,255,0.9); color: #000; }
 	@media (max-width: 600px) {
-		.internal-links a {
-			padding: 0.45em 0.4em;
-			font-size: 0.8em;
-		}
-		.site-logo span:last-child {
-			display: none;
-		}
+		.nav-link, .nav-link-muted { display: none; }
 	}
 </style>

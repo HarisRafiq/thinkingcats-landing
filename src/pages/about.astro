@@ -10,39 +10,96 @@ import { SITE_TITLE } from '../consts';
 	<head>
 		<BaseHead
 			title={`About — ${SITE_TITLE}`}
-			description="We're a small team obsessed with making AI approachable, interesting, and useful for everyday people."
+			description="ThinkingCats is an AI-powered brand marketing copilot that builds your strategy and writes your content — from one brief."
 		/>
 	</head>
 	<body>
 		<Header />
-		<main>
-			<h1>About ThinkingCats</h1>
+		<main class="about-main">
+			<div class="about-hero">
+				<p class="eyebrow">About</p>
+				<h1>The AI that thinks<br />before it writes.</h1>
+				<p class="about-lead">
+					ThinkingCats is a brand marketing copilot built for small businesses, consultants, and agencies who need consistent, strategic content — without a full marketing team.
+				</p>
+			</div>
 
-			<p>
-				<strong>ThinkingCats</strong> is a publication exploring artificial intelligence through
-				clear, honest writing. We cover tools, concepts, and ideas that matter — without the hype.
-			</p>
+			<div class="about-body">
+				<h2>Our mission</h2>
+				<p>
+					We believe every business deserves marketing that's grounded in strategy, not guesswork. Most AI writing tools hand you a blank prompt and expect you to already know what to say. ThinkingCats does the thinking first — it monitors your market, proposes a strategy, and then writes the content.
+				</p>
 
-			<h2>Our mission</h2>
-			<p>
-				We believe good ideas deserve clear explanations. Our goal is to make AI accessible to
-				anyone curious enough to ask "how does this actually work?"
-			</p>
+				<h2>What we build</h2>
+				<ul>
+					<li>Market intelligence from RSS feeds and competitor blogs</li>
+					<li>AI-generated campaign strategies tailored to your brand</li>
+					<li>SEO blog posts and 9-panel social carousels — from one brief</li>
+					<li>Support for 50+ languages and multiple brand profiles</li>
+				</ul>
 
-			<h2>What we write about</h2>
-			<ul>
-				<li>Practical AI tools and how to use them</li>
-				<li>Research papers distilled into plain English</li>
-				<li>Opinions on where AI is heading</li>
-				<li>Tutorials and hands-on guides</li>
-			</ul>
-
-			<h2>Get in touch</h2>
-			<p>
-				Have a story idea, feedback, or just want to say hi?
-				Email us at <a href="mailto:hello@thinkingcats.com">hello@thinkingcats.com</a>.
-			</p>
+				<h2>Get in touch</h2>
+				<p>
+					Questions, feedback, or partnership enquiries?<br />
+					Email us at <a href="mailto:hello@thinkingcats.com">hello@thinkingcats.com</a>.
+				</p>
+			</div>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.about-main {
+		max-width: 768px;
+		margin: 0 auto;
+		padding: 8rem 1.5rem 5rem;
+	}
+	.eyebrow {
+		font-size: 11px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		color: rgba(129,140,248,0.6);
+		margin-bottom: 0.75rem;
+	}
+	.about-hero {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+	.about-hero h1 {
+		font-size: clamp(2rem, 5vw, 3rem);
+		font-weight: 900;
+		letter-spacing: -0.03em;
+		line-height: 1.1;
+		color: #fff;
+		margin-bottom: 1.25rem;
+	}
+	.about-lead {
+		font-size: 1.05rem;
+		color: rgba(255,255,255,0.4);
+		line-height: 1.7;
+		max-width: 36rem;
+		margin: 0 auto;
+	}
+	.about-body h2 {
+		font-size: 1.25rem;
+		font-weight: 800;
+		color: #fff;
+		margin: 2rem 0 0.75rem;
+		letter-spacing: -0.02em;
+	}
+	.about-body p, .about-body li {
+		font-size: 0.95rem;
+		color: rgba(255,255,255,0.5);
+		line-height: 1.75;
+	}
+	.about-body ul {
+		padding-left: 1.4rem;
+		margin-bottom: 1em;
+	}
+	.about-body li { margin-bottom: 0.4rem; }
+	.about-body a { color: #818cf8; }
+	.about-body a:hover { color: #a5b4fc; }
+</style>
+

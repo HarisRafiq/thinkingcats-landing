@@ -3,12 +3,6 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
-
-const posts = (await getCollection('blog'))
-	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-	.slice(0, 3);
 ---
 
 <!doctype html>
@@ -19,92 +13,568 @@ const posts = (await getCollection('blog'))
 	<body>
 		<Header />
 
-		<!-- Hero -->
-		<section class="hero">
+		<!-- ── HERO ── -->
+		<section class="hero-section">
+			<!-- radial glow -->
+			<div class="hero-glow" aria-hidden="true"></div>
+
 			<div class="hero-inner">
-				<div class="hero-badge">✨ AI + curiosity</div>
-				<h1>Insights for<br /><span class="accent">curious minds</span></h1>
-				<p class="hero-sub">
-					ThinkingCats explores the intersection of artificial intelligence and everyday life —
-					written for humans, not robots.
-				</p>
-				<div class="hero-cta">
-					<a href="/blog" class="btn-primary">Read the blog</a>
-					<a href="/pricing" class="btn-secondary">View plans</a>
-				</div>
-			</div>
-			<div class="hero-visual" aria-hidden="true">
-				<div class="cat-grid">
-					<span>🐱</span><span>🤖</span><span>💡</span>
-					<span>🔬</span><span>📖</span><span>🧠</span>
-				</div>
-			</div>
-		</section>
+				<!-- Left -->
+				<div class="hero-left">
+					<div class="hero-badge">
+						<svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l1.88 5.78L20 9l-4.64 3.37L16.76 18 12 14.77 7.24 18l1.4-5.63L4 9l6.12-.22L12 3z"/></svg>
+						Brand Marketing Copilot
+					</div>
 
-		<!-- Features -->
-		<section class="features">
-			<div class="section-inner">
-				<h2 class="section-title">Why ThinkingCats?</h2>
-				<div class="feature-grid">
-					<div class="feature-card">
-						<div class="feature-icon">🎯</div>
-						<h3>Focused writing</h3>
-						<p>Concise, opinionated posts on AI trends, tools, and ideas — no filler.</p>
+					<h1 class="hero-h1">
+						<span class="hero-white">The AI that builds<br />your strategy —</span><br />
+						<span class="hero-gradient">then writes the content.</span>
+					</h1>
+
+					<p class="hero-sub">
+						ThinkingCats replaces your Jasper, Buffer, and marketing agency — for $29/month. Get <strong>market intelligence, a campaign strategy, and publish-ready content</strong> — from one brief.
+					</p>
+
+					<div class="hero-cta">
+						<a href="/pricing" class="btn-primary">
+							Try it free — no credit card
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="arrow-icon"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+						</a>
 					</div>
-					<div class="feature-card">
-						<div class="feature-icon">🔓</div>
-						<h3>Free to read</h3>
-						<p>Core content is always free. Premium plans unlock deeper guides and early access.</p>
-					</div>
-					<div class="feature-card">
-						<div class="feature-icon">⚡</div>
-						<h3>Built for speed</h3>
-						<p>Static Astro site — loads instantly, works offline, scores 100 on Lighthouse.</p>
-					</div>
-					<div class="feature-card">
-						<div class="feature-icon">🔍</div>
-						<h3>SEO optimised</h3>
-						<p>Canonical URLs, OG tags, sitemap, and RSS feed included out of the box.</p>
+
+					<div class="hero-trust">
+						<div class="trust-item"><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Replaces your $200/hr consultant</div>
+						<div class="trust-item"><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Blog + carousel from one brief</div>
+						<div class="trust-item"><svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>From $29/mo — cancel anytime</div>
 					</div>
 				</div>
-			</div>
-		</section>
 
-		<!-- Latest posts -->
-		{posts.length > 0 && (
-			<section class="recent-posts">
-				<div class="section-inner">
-					<div class="section-header">
-						<h2 class="section-title">Latest posts</h2>
-						<a href="/blog" class="see-all">See all →</a>
-					</div>
-					<div class="post-grid">
-						{posts.map(post => (
-							<a href={`/blog/${post.id}/`} class="post-card">
-								{post.data.heroImage && (
-									<img src={post.data.heroImage.src} alt={post.data.title} class="post-thumb" width="400" height="225" />
-								)}
-								<div class="post-body">
-									<time class="post-date"><FormattedDate date={post.data.pubDate} /></time>
-									<h3>{post.data.title}</h3>
-									<p>{post.data.description}</p>
+				<!-- Right: Director mockup -->
+				<div class="hero-right">
+					<div class="mockup-card">
+						<div class="mockup-titlebar">
+							<span class="dot dot-red"></span>
+							<span class="dot dot-amber"></span>
+							<span class="dot dot-green"></span>
+							<span class="mockup-title">ThinkingCats · Director</span>
+						</div>
+						<div class="mockup-body">
+							<div class="mockup-section">
+								<p class="label-tiny">Your brief</p>
+								<div class="brief-box">We just launched a new accounting service for local restaurants.</div>
+							</div>
+							<div class="status-box">
+								<div class="spinner"></div>
+								<div>
+									<p class="status-title">Analysing brief…</p>
+									<p class="status-sub">Reading context, classifying post type, extracting facts</p>
 								</div>
-							</a>
-						))}
+							</div>
+							<div class="strategy-box">
+								<p class="label-tiny">Proposed strategy</p>
+								<p class="strategy-title">Educational · "5 ways restaurants bleed revenue without realising"</p>
+								<div class="pill-row">
+									<span class="pill">Blog post</span>
+									<span class="pill">Social carousel</span>
+									<span class="pill">Data-driven angle</span>
+								</div>
+							</div>
+							<button class="generate-btn">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="zap-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+								Generate blog + carousel
+							</button>
+						</div>
 					</div>
 				</div>
-			</section>
-		)}
+			</div>
+		</section>
 
-		<!-- CTA -->
-		<section class="cta-section">
-			<div class="cta-inner">
-				<h2>Start reading today</h2>
-				<p>Browse the blog or check out our plans for premium access.</p>
-				<div class="cta-buttons">
-					<a href="/blog" class="btn-primary">Browse articles</a>
-					<a href="/pricing" class="btn-outline">See pricing</a>
+		<!-- ── COST COMPARISON ── -->
+		<section class="cost-bar">
+			<div class="cost-grid">
+				<div class="cost-item">
+					<p class="cost-label">Marketing consultant</p>
+					<p class="cost-price cost-red">$150–$300 / hr</p>
+					<p class="cost-note">One meeting budget</p>
 				</div>
+				<div class="cost-item">
+					<p class="cost-label">Agency retainer</p>
+					<p class="cost-price cost-amber">$2,500–$8,000 / mo</p>
+					<p class="cost-note">Per month, minimum</p>
+				</div>
+				<div class="cost-item cost-highlight">
+					<p class="cost-label">ThinkingCats</p>
+					<p class="cost-price cost-green">from $29 / mo</p>
+					<p class="cost-note">Full platform, cancel anytime</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── PAIN ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">The real problem</p>
+				<h2 class="section-h2">Why marketing never gets done.</h2>
+			</div>
+			<div class="pain-grid">
+				<div class="pain-card">
+					<div class="pain-icon-wrap amber-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+					</div>
+					<h3>You're the owner AND the marketer</h3>
+					<p>Between operations, sales, and customer service, marketing is always the last thing to get done — and the first to be abandoned.</p>
+				</div>
+				<div class="pain-card">
+					<div class="pain-icon-wrap rose-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+					</div>
+					<h3>You don't know which channel to bet on</h3>
+					<p>Blog? Instagram? LinkedIn? Google Ads? Without a strategy, you spend money and time on random channels and see no measurable return.</p>
+				</div>
+				<div class="pain-card">
+					<div class="pain-icon-wrap orange-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+					</div>
+					<h3>You pay for 6 tools and still get no results</h3>
+					<p>Canva, Buffer, Jasper, Surfer, Mailchimp — the average SMB spends $200–$300/month on tools but has no strategy to connect them.</p>
+				</div>
+			</div>
+			<p class="pain-tagline">ThinkingCats solves all three — strategy first, content second.</p>
+		</section>
+
+		<!-- ── WHO IT'S FOR ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">Who it's for</p>
+				<h2 class="section-h2">Built for people who wear too many hats.</h2>
+				<p class="section-sub">Pick the profile that sounds like you.</p>
+			</div>
+			<div class="who-grid">
+				<div class="who-card">
+					<div class="who-icon-wrap amber-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+					</div>
+					<div>
+						<h3>SMB Owner-Operators</h3>
+						<p class="who-subtitle amber-text">You run the business AND the marketing</p>
+					</div>
+					<ul class="who-list">
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>No dedicated marketing team</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Need to stay visible on social + Google</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Want 30 posts/month without 30 hours/month</li>
+					</ul>
+				</div>
+				<div class="who-card">
+					<div class="who-icon-wrap indigo-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+					</div>
+					<div>
+						<h3>B2B Consultants &amp; Founders</h3>
+						<p class="who-subtitle indigo-text">You need thought leadership without writing full-time</p>
+					</div>
+					<ul class="who-list">
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Need to publish on LinkedIn consistently</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Want to look like a full marketing team — solo</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Clients come from inbound, not cold outreach</li>
+					</ul>
+				</div>
+				<div class="who-card">
+					<div class="who-icon-wrap purple-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+					</div>
+					<div>
+						<h3>Small Agencies</h3>
+						<p class="who-subtitle purple-text">You manage 3–10 client brands and need to scale output</p>
+					</div>
+					<ul class="who-list">
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Manage multiple client brands from one place</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Deliver consistent content without more headcount</li>
+						<li><svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>White-label or resell AI content to clients</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── VS COMPARISON ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">Why it's different</p>
+				<h2 class="section-h2">Content tools write. ThinkingCats thinks.</h2>
+				<p class="section-sub">Jasper, Copy.ai, and Buffer give you a blank prompt and generate text. That still leaves the hard part — knowing what to create — to you.</p>
+			</div>
+			<div class="compare-table">
+				<div class="compare-header">
+					<div class="compare-col-feat"></div>
+					<div class="compare-col-tools">
+						<p class="compare-col-title">AI writing tools</p>
+						<p class="compare-col-sub">Jasper · Copy.ai · Buffer AI</p>
+					</div>
+					<div class="compare-col-tc">
+						<p class="compare-col-title tc-title">ThinkingCats</p>
+						<p class="compare-col-sub tc-sub">Brand Marketing Copilot</p>
+					</div>
+				</div>
+				{[
+					{ feature: "Tells you what to create", tools: false, tc: true },
+					{ feature: "Monitors your market", tools: false, tc: true },
+					{ feature: "Builds a content strategy", tools: false, tc: true },
+					{ feature: "Writes content", tools: true, tc: true },
+					{ feature: "Generates social carousels", tools: false, tc: true },
+					{ feature: "Produces SEO blog posts", tools: false, tc: true },
+					{ feature: "Knows your brand voice", tools: "partial", tc: true },
+					{ feature: "Refines briefs with you", tools: false, tc: true },
+					{ feature: "Works in 50+ languages", tools: false, tc: true },
+				].map(({ feature, tools, tc }) => (
+					<div class="compare-row">
+						<div class="compare-feat">{feature}</div>
+						<div class="compare-val-tools">
+							{tools === true ? (
+								<svg class="check-sm white30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+							) : tools === "partial" ? (
+								<span class="badge-limited">Limited</span>
+							) : (
+								<svg class="x-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+							)}
+						</div>
+						<div class="compare-val-tc">
+							{tc ? (
+								<svg class="check-sm emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+							) : (
+								<svg class="x-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+							)}
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- ── HOW IT WORKS ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">How it works</p>
+				<h2 class="section-h2">Intelligence → Strategy → Execution.</h2>
+				<p class="section-sub">Your full marketing agency — strategy, content, and execution — done in minutes, not weeks.</p>
+			</div>
+
+			<!-- Step 1: Intelligence -->
+			<div class="hiw-row">
+				<div class="hiw-text">
+					<div class="hiw-step-header">
+						<div class="hiw-icon violet-icon">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-md"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+						</div>
+						<span class="step-num">STEP 01</span>
+					</div>
+					<h3>Intelligence</h3>
+					<p class="hiw-tagline violet-text">Know your market before you create</p>
+					<p class="hiw-desc">Connect competitor blogs, industry news, and niche RSS feeds. ThinkingCats reads them daily and surfaces what's actually trending in your market — so you're never guessing.</p>
+					<div class="pill-row">
+						<span class="pill">Competitor monitoring</span>
+						<span class="pill">Industry RSS feeds</span>
+						<span class="pill">Trend surfacing</span>
+					</div>
+				</div>
+				<div class="hiw-mockup violet-mockup">
+					<div class="feed-card">
+						<p class="label-tiny">Industry feed</p>
+						<div class="feed-item">
+							<div class="feed-dot"></div>
+							<div class="feed-content">
+								<p class="feed-title">AI adoption in SMB services up 40% in Q1</p>
+								<p class="feed-meta">TechCrunch · 2h ago</p>
+							</div>
+							<span class="trending-badge">Trending</span>
+						</div>
+						<div class="feed-item">
+							<div class="feed-dot"></div>
+							<div class="feed-content">
+								<p class="feed-title">Google updates local business ranking factors</p>
+								<p class="feed-meta">Search Engine Journal · 5h ago</p>
+							</div>
+						</div>
+						<div class="feed-item">
+							<div class="feed-dot"></div>
+							<div class="feed-content">
+								<p class="feed-title">Why B2B blogs outperform paid ads in 2026</p>
+								<p class="feed-meta">HubSpot Blog · 1d ago</p>
+							</div>
+						</div>
+						<button class="feed-cta">Create post from article →</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Step 2: Strategy -->
+			<div class="hiw-row hiw-row-reverse">
+				<div class="hiw-text">
+					<div class="hiw-step-header">
+						<div class="hiw-icon indigo-icon">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-md"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+						</div>
+						<span class="step-num">STEP 02</span>
+					</div>
+					<h3>Strategy</h3>
+					<p class="hiw-tagline indigo-text">A plan, not just a prompt</p>
+					<p class="hiw-desc">Tell ThinkingCats your goal or topic. It generates a full campaign — multiple content angles, the right format for each piece, and a clear brief — built around your brand voice.</p>
+					<div class="pill-row">
+						<span class="pill">Campaign angles</span>
+						<span class="pill">Format selection</span>
+						<span class="pill">Brand voice alignment</span>
+					</div>
+				</div>
+				<div class="hiw-mockup indigo-mockup hiw-mockup-first">
+					<div class="strategy-mock">
+						<p class="label-tiny">Campaign ideas</p>
+						<p class="strategy-topic">Topic: "Why local service businesses lose leads online"</p>
+						<div class="idea-list">
+							<div class="idea-item">
+								<p class="idea-title">The $5K mistake local businesses make every month</p>
+								<div class="pill-row">
+									<span class="pill-indigo">Educational · Data-driven</span>
+									<span class="pill">Blog post</span>
+								</div>
+							</div>
+							<div class="idea-item">
+								<p class="idea-title">3 signs your Google listing is costing you jobs</p>
+								<div class="pill-row">
+									<span class="pill-indigo">How-to · Actionable</span>
+									<span class="pill">Carousel</span>
+								</div>
+							</div>
+							<div class="idea-item">
+								<p class="idea-title">We audited 100 local business websites. Here's what we found.</p>
+								<div class="pill-row">
+									<span class="pill-indigo">Case study · Proof</span>
+									<span class="pill">Carousel</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Step 3: Execution -->
+			<div class="hiw-row">
+				<div class="hiw-text">
+					<div class="hiw-step-header">
+						<div class="hiw-icon purple-icon">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-md"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+						</div>
+						<span class="step-num">STEP 03</span>
+					</div>
+					<h3>Execution</h3>
+					<p class="hiw-tagline purple-text">Publish-ready content, every time</p>
+					<p class="hiw-desc">Approve the strategy. ThinkingCats produces a full blog post for SEO or a cinematic 9-panel social carousel — with your brand's unique visual identity on every piece.</p>
+					<div class="pill-row">
+						<span class="pill">Blog posts</span>
+						<span class="pill">9-panel carousels</span>
+						<span class="pill">Your brand on every post</span>
+					</div>
+				</div>
+				<div class="hiw-mockup purple-mockup">
+					<div class="output-grid">
+						<div class="output-item">
+							<div class="output-header">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="output-icon emerald-icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+								<span class="output-type">Blog Post</span>
+							</div>
+							<div class="skeleton-lines">
+								<div class="sk-line sk-full"></div>
+								<div class="sk-line sk-4-5"></div>
+								<div class="sk-line sk-full"></div>
+								<div class="sk-line sk-3-4"></div>
+								<div class="sk-line sk-full"></div>
+							</div>
+							<p class="output-tag emerald-tag">SEO-optimised · Long-form</p>
+						</div>
+						<div class="output-item">
+							<div class="output-header">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="output-icon purple-icon-sm"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+								<span class="output-type">9-Panel Grid</span>
+							</div>
+							<div class="carousel-grid">
+								{[0,1,2,3,4,5,6,7,8].map((i) => (
+									<div class="carousel-cell" style={`background: hsl(${240 + i * 15}, 70%, ${15 + i * 2}%)`}></div>
+								))}
+							</div>
+							<p class="output-tag purple-tag">Cinematic · Carousel-ready</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── STATS ── -->
+		<section class="stats-bar">
+			<div class="stats-inner">
+				<div class="stat-item"><span class="stat-val">10,000+</span><span class="stat-label">Brands created</span></div>
+				<div class="stat-item"><span class="stat-val">50+</span><span class="stat-label">Languages</span></div>
+				<div class="stat-item"><span class="stat-val">9</span><span class="stat-label">Content formats</span></div>
+				<div class="stat-item"><span class="stat-val">4.9 / 5</span><span class="stat-label">Avg. rating</span></div>
+			</div>
+		</section>
+
+		<!-- ── CONTENT TYPES ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">What you can create</p>
+				<h2 class="section-h2">Every format your business needs.</h2>
+				<p class="section-sub">Describe your goal. ThinkingCats automatically picks the right format and executes it.</p>
+			</div>
+			<div class="content-type-grid">
+				{[
+					{ title: "Advertisement", desc: "Product promos and offer launches" },
+					{ title: "Brand Story", desc: "Founder journey, origins, culture" },
+					{ title: "Product Announcement", desc: "New launches and feature reveals" },
+					{ title: "Educational", desc: "How-tos your audience bookmarks" },
+					{ title: "Trend Commentary", desc: "React to news from your brand's POV" },
+					{ title: "Thought Leadership", desc: "Opinions that position you as the expert" },
+					{ title: "How-to Guide", desc: "Step-by-step content that drives saves" },
+					{ title: "Case Study", desc: "Proof that builds trust with buyers" },
+					{ title: "Promotional", desc: "Seasonal campaigns and sales" },
+				].map(({ title, desc }) => (
+					<div class="ct-card">
+						<div class="ct-icon-wrap">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+						</div>
+						<div>
+							<p class="ct-title">{title}</p>
+							<p class="ct-desc">{desc}</p>
+						</div>
+					</div>
+				))}
+			</div>
+			<div class="ct-footnotes">
+				<div class="ct-note purple-note">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm purple-text"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+					<p>Social formats ship as a <strong>9-panel cinematic carousel</strong> — ready for Instagram, LinkedIn, and Facebook.</p>
+				</div>
+				<div class="ct-note emerald-note">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm emerald-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+					<p>Thought leadership formats ship as a <strong>full SEO blog post</strong> — ready to publish to your website.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- ── TESTIMONIALS ── -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">Real results</p>
+				<h2 class="section-h2">Businesses already growing with ThinkingCats.</h2>
+			</div>
+			<div class="testi-grid">
+				{[
+					{ quote: "I was spending 8 hours every Sunday writing the week's posts. Now ThinkingCats generates them in under an hour — and they actually sound like me. My client enquiries doubled in 6 weeks.", name: "Maya Patel", role: "Owner, Glow & Ground Skincare", initial: "M", metric: "2× client enquiries" },
+					{ quote: "As a strategy consultant I needed to prove thought leadership without writing full-time. ThinkingCats mapped my content for 3 months and now I just execute. I've signed 2 six-figure clients from LinkedIn alone.", name: "Sana Mirza", role: "Independent Strategy Consultant", initial: "S", metric: "2 × six-figure clients" },
+					{ quote: "ThinkingCats flagged a trending topic in my niche two weeks before anyone else was covering it. I published first, the post went everywhere, and I had 6 new client enquiries that week. No other tool does this.", name: "James Okafor", role: "Founder, Meridian Brand Studio", initial: "J", metric: "6 new enquiries in one week" },
+				].map(({ quote, name, role, initial, metric }) => (
+					<div class="testi-card">
+						<div class="testi-top">
+							<div class="stars">
+								{[0,1,2,3,4].map(() => <svg class="star" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>)}
+							</div>
+							<span class="metric-badge">{metric}</span>
+						</div>
+						<p class="testi-quote">"{quote}"</p>
+						<div class="testi-author">
+							<div class="testi-avatar">{initial}</div>
+							<div>
+								<p class="testi-name">{name}</p>
+								<p class="testi-role">{role}</p>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- ── PRICING ── -->
+		<section class="section-pad" id="pricing">
+			<div class="section-center">
+				<p class="eyebrow">Simple pricing</p>
+				<h2 class="section-h2">Less than one hour with a consultant.<br />All month long.</h2>
+				<div class="founding-badge">Founding member pricing — available while in beta</div>
+			</div>
+			<p class="pricing-anchor">A marketing consultant charges <span class="cost-red">$150–$300/hr</span>. You get ThinkingCats the entire month for less.</p>
+			<div class="pricing-grid">
+				{[
+					{ label: "FREE TRIAL", price: 0, annualPrice: 0, brands: 1, posts: 3, highlight: false, cta: "Try free — no credit card", features: ["1 brand","3 posts to prove the concept","Full platform access","AI brand setup","Blog + carousel output"], subtext: "See what consistent marketing actually does for your business" },
+					{ label: "STARTER", price: 29, annualPrice: 23, brands: 3, posts: 30, highlight: true, badge: "Most Popular", cta: "Start for $29/mo", features: ["3 brands","30 posts/month","RSS market monitoring","AI campaign planning","Blog + carousel output","50+ languages","Email support"], subtext: "Less than a single social media ad — for 30 AI posts/month" },
+					{ label: "PRO", price: 99, annualPrice: 79, brands: 10, posts: 150, highlight: false, cta: "Get Pro", features: ["10 brands","150 posts/month","Priority generation","Advanced analytics","Custom visual styles","API access","Priority support"], subtext: "Full AI content engine — at half the cost of a basic scheduler" },
+				].map(({ label, price, annualPrice, brands, posts, highlight, badge, cta, features, subtext }) => (
+					<div class={`pricing-card ${highlight ? 'pricing-highlight' : ''}`}>
+						{badge && <div class="pricing-badge">{badge}</div>}
+						<div class="pricing-header">
+							<p class="pricing-tier-label">{label}</p>
+							<div class="pricing-price-row">
+								<span class="pricing-price">${price}</span>
+								{price > 0 && <span class="pricing-per">/mo</span>}
+							</div>
+							{price > 0 && <p class="pricing-annual">or ${annualPrice}/mo billed annually</p>}
+							<p class="pricing-scope">{brands} brand{brands !== 1 ? 's' : ''} · {posts} posts/mo</p>
+							<p class="pricing-subtext">{subtext}</p>
+						</div>
+						<ul class="pricing-features">
+							{features.map((f) => (
+								<li>
+									<svg class="check-icon emerald" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+									{f}
+								</li>
+							))}
+						</ul>
+						<a href="/pricing" class={`pricing-cta ${highlight ? 'pricing-cta-highlight' : ''}`}>{cta}</a>
+					</div>
+				))}
+			</div>
+			<p class="pricing-see-all"><a href="/pricing">See full plan details →</a></p>
+		</section>
+
+		<!-- ── FAQ ── -->
+		<section class="section-pad faq-section">
+			<div class="section-center">
+				<p class="eyebrow">FAQ</p>
+				<h2 class="section-h2">Common questions.</h2>
+			</div>
+			<div class="faq-list" id="faq-list">
+				{[
+					{ q: "Is this just another AI writing tool like Jasper or Copy.ai?", a: "No. Writing tools give you a blank prompt and generate text. ThinkingCats starts with strategy — it monitors your market, builds a content plan, analyses your brief, and proposes a strategy for you to review before anything is written. The writing is the last step, not the only step." },
+					{ q: "I'm not a marketer. Will I know what to do?", a: "That's exactly who this is built for. The Director workflow guides you step-by-step: you describe your goal in plain language, ThinkingCats analyses it, shows you a strategy, you refine it, and then it generates the content. No marketing knowledge required." },
+					{ q: "Does it help with SEO?", a: "Yes. The blog post output is long-form SEO content — you control the topic and angle, ThinkingCats writes a full article structured for search. Pair it with the RSS monitoring to target trending topics in your niche before competitors do." },
+					{ q: "What channels does it cover?", a: "Social media (9-panel carousels that work on Instagram, LinkedIn, and Facebook) and blog/SEO content. Both outputs use the same brand voice, visual identity, and content brief — so your marketing is consistent across channels." },
+					{ q: "How is this different from hiring a freelancer?", a: "A freelancer needs a brief every time, works business hours, and charges $500–$2,000 per project. ThinkingCats already knows your brand voice, is available 24/7, and produces content in minutes. It doesn't replace human creativity for edge cases — but for consistent weekly marketing, it does the job at a fraction of the cost." },
+					{ q: "Can I manage more than one business?", a: "Yes. The Starter plan supports 3 brands — useful if you run a main business plus side ventures, or if you manage a couple of client accounts. The Pro plan supports 10 brands for consultants and small agencies." },
+					{ q: "How is this different from just using ChatGPT?", a: "ChatGPT requires you to already know what to create. ThinkingCats figures that out for you — it monitors your market, surfaces what's trending, builds a campaign strategy, and then generates the content. You're not writing prompts; you're reviewing AI-proposed strategy and approving it." },
+					{ q: "Could the AI accidentally produce false or misleading information?", a: "Yes — like all AI systems, outputs may contain inaccuracies, outdated facts, or unverified claims. You are required to review and verify all content before publishing. Outputs should never be presented as news reporting, journalism, legal advice, or factual statements of record." },
+				].map(({ q, a }, i) => (
+					<div class="faq-item" data-index={i}>
+						<button class="faq-q" aria-expanded="false">
+							<span>{q}</span>
+							<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+						</button>
+						<div class="faq-a" hidden>
+							<p>{a}</p>
+						</div>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<!-- ── FINAL CTA ── -->
+		<section class="final-cta">
+			<div class="final-glow" aria-hidden="true"></div>
+			<div class="final-inner">
+				<h2 class="final-h2">
+					<span class="hero-white">Stop winging your marketing.</span><br />
+					<span class="hero-gradient">Start with a plan.</span>
+				</h2>
+				<p class="final-sub">ThinkingCats monitors your market, builds your strategy, and executes it — so you can focus on running your business.</p>
+				<p class="final-used">Used by local service businesses, B2B consultants, and e-commerce brands.</p>
+				<a href="/pricing" class="btn-primary btn-large">
+					Try free — no credit card
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="arrow-icon"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+				</a>
+				<p class="final-join">Join 10,000+ brands already creating</p>
+				<p class="final-disclaimer">Free trial: 1 brand · 3 posts · Full platform access · No credit card</p>
 			</div>
 		</section>
 
@@ -112,263 +582,603 @@ const posts = (await getCollection('blog'))
 	</body>
 </html>
 
+<script>
+	// FAQ accordion
+	document.querySelectorAll('.faq-q').forEach((btn) => {
+		btn.addEventListener('click', () => {
+			const item = btn.parentElement;
+			const answer = item?.querySelector('.faq-a') as HTMLElement | null;
+			const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+			// Close all
+			document.querySelectorAll('.faq-item').forEach((el) => {
+				el.querySelector('.faq-q')?.setAttribute('aria-expanded', 'false');
+				const a = el.querySelector('.faq-a') as HTMLElement | null;
+				if (a) a.hidden = true;
+				el.classList.remove('faq-open');
+			});
+
+			// Open clicked if it was closed
+			if (!isOpen && answer) {
+				btn.setAttribute('aria-expanded', 'true');
+				answer.hidden = false;
+				item?.classList.add('faq-open');
+			}
+		});
+	});
+</script>
+
 <style>
 	/* ── Hero ── */
-	.hero {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 4em;
-		max-width: 1100px;
-		margin: 0 auto;
-		padding: 5em 1.5em 4em;
-		flex-wrap: wrap;
+	.hero-section {
+		position: relative;
+		padding: 9rem 1.5rem 5rem;
+		overflow: hidden;
+	}
+	.hero-glow {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		background: radial-gradient(ellipse at top center, rgba(99,102,241,0.11) 0%, transparent 65%);
 	}
 	.hero-inner {
-		flex: 1;
-		min-width: 280px;
-		max-width: 560px;
+		position: relative;
+		z-index: 1;
+		max-width: 1152px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3.5rem;
+		align-items: center;
+	}
+	@media (max-width: 900px) {
+		.hero-inner { grid-template-columns: 1fr; }
+		.hero-section { padding: 7rem 1.5rem 4rem; }
 	}
 	.hero-badge {
-		display: inline-block;
-		background: rgba(35,55,255,0.08);
-		color: var(--accent);
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		background: rgba(255,255,255,0.04);
+		border: 1px solid rgba(255,255,255,0.08);
 		border-radius: 100px;
-		padding: 0.3em 0.9em;
-		font-size: 0.85em;
-		font-weight: 600;
-		margin-bottom: 1.25em;
+		padding: 0.35rem 1rem;
+		font-size: 0.75rem;
+		font-weight: 700;
+		color: rgba(255,255,255,0.5);
+		letter-spacing: 0.05em;
+		margin-bottom: 1.75rem;
 	}
-	h1 {
-		font-size: clamp(2.4em, 5vw, 3.5em);
-		line-height: 1.1;
-		margin-bottom: 0.6em;
+	.badge-icon { width: 14px; height: 14px; color: #818cf8; }
+	.hero-h1 {
+		font-size: clamp(2.6rem, 5vw, 3.8rem);
+		font-weight: 900;
+		line-height: 0.95;
+		letter-spacing: -0.03em;
+		margin-bottom: 1.5rem;
 	}
-	.accent {
-		color: var(--accent);
+	.hero-white {
+		background: linear-gradient(135deg, #fff 0%, #fff 60%, rgba(255,255,255,0.4) 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+	.hero-gradient {
+		background: linear-gradient(90deg, #818cf8, #a78bfa, #c084fc);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
 	}
 	.hero-sub {
-		font-size: 1.1em;
-		color: rgb(var(--gray));
-		line-height: 1.65;
-		margin-bottom: 2em;
+		font-size: 1.05rem;
+		color: rgba(255,255,255,0.4);
+		line-height: 1.7;
+		font-weight: 500;
+		max-width: 30rem;
+		margin-bottom: 1rem;
 	}
-	.hero-cta {
+	.hero-sub strong { color: rgba(255,255,255,0.7); font-weight: 700; }
+	.hero-cta { margin-top: 2rem; }
+	.btn-primary {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 1rem 2rem;
+		background: #4f46e5;
+		color: #fff;
+		border-radius: 12px;
+		font-weight: 900;
+		font-size: 0.95rem;
+		text-decoration: none;
+		transition: background 0.15s, box-shadow 0.15s, transform 0.1s;
+		box-shadow: 0 0 30px rgba(99,102,241,0.3);
+	}
+	.btn-primary:hover {
+		background: #6366f1;
+		box-shadow: 0 0 40px rgba(99,102,241,0.5);
+		color: #fff;
+	}
+	.btn-primary:active { transform: scale(0.98); }
+	.btn-large { font-size: 1rem; padding: 1rem 2.5rem; }
+	.arrow-icon { width: 18px; height: 18px; transition: transform 0.15s; }
+	.btn-primary:hover .arrow-icon { transform: translateX(2px); }
+	.zap-icon { width: 16px; height: 16px; }
+	.hero-trust {
 		display: flex;
-		gap: 1em;
 		flex-wrap: wrap;
+		gap: 1.25rem;
+		margin-top: 1.75rem;
 	}
-	.hero-visual {
-		flex: 0 0 auto;
+	.trust-item {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-size: 0.75rem;
+		color: rgba(255,255,255,0.3);
+		font-weight: 600;
 	}
-	.cat-grid {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 0.75em;
-		font-size: 2.5em;
-		line-height: 1;
-		filter: grayscale(10%);
+	.check-icon { width: 14px; height: 14px; flex-shrink: 0; }
+	.check-icon.emerald { color: rgba(52,211,153,0.6); }
+	.check-icon.white30 { color: rgba(255,255,255,0.3); }
+	.trust-item .check-icon { color: rgba(52,211,153,0.6); }
+
+	/* Director mockup */
+	.hero-right { width: 100%; max-width: 440px; margin: 0 auto; }
+	.mockup-card {
+		background: rgba(255,255,255,0.03);
+		border: 1px solid rgba(255,255,255,0.08);
+		border-radius: 16px;
+		overflow: hidden;
+		box-shadow: 0 0 60px rgba(99,102,241,0.08);
 	}
-	.cat-grid span {
+	.mockup-titlebar {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		padding: 12px 16px;
+		border-bottom: 1px solid rgba(255,255,255,0.06);
+	}
+	.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+	.dot-red { background: rgba(239,68,68,0.5); }
+	.dot-amber { background: rgba(245,158,11,0.5); }
+	.dot-green { background: rgba(52,211,153,0.5); }
+	.mockup-title { margin-left: 8px; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.2); }
+	.mockup-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem; }
+	.mockup-section {}
+	.label-tiny {
+		font-size: 10px;
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		color: rgba(255,255,255,0.25);
+		margin-bottom: 6px;
+	}
+	.brief-box {
+		background: rgba(255,255,255,0.04);
+		border: 1px solid rgba(255,255,255,0.08);
+		border-radius: 8px;
+		padding: 10px 12px;
+		font-size: 0.75rem;
+		color: rgba(255,255,255,0.6);
+		line-height: 1.5;
+	}
+	.status-box {
+		display: flex;
+		align-items: flex-start;
+		gap: 10px;
+		padding: 10px 12px;
+		background: rgba(99,102,241,0.1);
+		border: 1px solid rgba(99,102,241,0.2);
+		border-radius: 8px;
+	}
+	.spinner {
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+		border: 2px solid #818cf8;
+		border-top-color: transparent;
+		animation: spin 1s linear infinite;
+		flex-shrink: 0;
+	}
+	.status-title { font-size: 11px; font-weight: 900; color: #a5b4fc; }
+	.status-sub { font-size: 10px; color: rgba(255,255,255,0.3); margin-top: 1px; }
+	.strategy-box {
+		background: rgba(255,255,255,0.02);
+		border: 1px solid rgba(255,255,255,0.07);
+		border-radius: 8px;
+		padding: 12px;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+	.strategy-title { font-size: 0.75rem; font-weight: 900; color: rgba(255,255,255,0.7); }
+	.pill-row { display: flex; flex-wrap: wrap; gap: 6px; }
+	.pill {
+		font-size: 9px;
+		font-weight: 700;
+		color: rgba(255,255,255,0.3);
+		background: rgba(255,255,255,0.04);
+		border: 1px solid rgba(255,255,255,0.07);
+		border-radius: 100px;
+		padding: 3px 8px;
+	}
+	.pill-indigo {
+		font-size: 9px;
+		font-weight: 700;
+		color: rgba(129,140,248,0.7);
+		background: rgba(99,102,241,0.1);
+		border: 1px solid rgba(99,102,241,0.15);
+		border-radius: 100px;
+		padding: 3px 8px;
+	}
+	.generate-btn {
+		width: 100%;
+		padding: 10px;
+		background: #4f46e5;
+		border: none;
+		border-radius: 8px;
+		color: #fff;
+		font-size: 13px;
+		font-weight: 900;
+		cursor: pointer;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 72px;
-		height: 72px;
-		background: rgb(var(--gray-light));
-		border-radius: 16px;
-		transition: transform 0.2s;
-	}
-	.cat-grid span:hover {
-		transform: scale(1.1);
-	}
-
-	/* ── Buttons ── */
-	.btn-primary {
-		display: inline-block;
-		padding: 0.7em 1.5em;
-		background: var(--accent);
-		color: white;
-		border-radius: 8px;
-		font-weight: 600;
-		text-decoration: none;
-		font-size: 0.95em;
-		transition: opacity 0.15s, transform 0.15s;
-	}
-	.btn-primary:hover {
-		opacity: 0.88;
-		transform: translateY(-1px);
-		color: white;
-	}
-	.btn-secondary {
-		display: inline-block;
-		padding: 0.7em 1.5em;
-		background: rgb(var(--gray-light));
-		color: rgb(var(--black));
-		border-radius: 8px;
-		font-weight: 600;
-		text-decoration: none;
-		font-size: 0.95em;
+		gap: 8px;
 		transition: background 0.15s;
 	}
-	.btn-secondary:hover {
-		background: rgb(var(--gray));
-		color: white;
-	}
-	.btn-outline {
-		display: inline-block;
-		padding: 0.7em 1.5em;
-		border: 2px solid white;
-		color: white;
-		border-radius: 8px;
-		font-weight: 600;
-		text-decoration: none;
-		font-size: 0.95em;
-		transition: background 0.15s;
-	}
-	.btn-outline:hover {
-		background: rgba(255,255,255,0.15);
-		color: white;
-	}
+	.generate-btn:hover { background: #6366f1; }
 
-	/* ── Sections ── */
-	.section-inner {
-		max-width: 1100px;
+	/* ── Cost bar ── */
+	.cost-bar {
+		padding: 2.5rem 1.5rem;
+		border-top: 1px solid rgba(255,255,255,0.05);
+		border-bottom: 1px solid rgba(255,255,255,0.05);
+		background: rgba(255,255,255,0.01);
+	}
+	.cost-grid {
+		max-width: 900px;
 		margin: 0 auto;
-		padding: 0 1.5em;
-	}
-	.section-title {
-		font-size: 1.9em;
-		margin-bottom: 1.5em;
-	}
-	.section-header {
-		display: flex;
-		align-items: baseline;
-		justify-content: space-between;
-		margin-bottom: 1.5em;
-	}
-	.section-header .section-title {
-		margin-bottom: 0;
-	}
-	.see-all {
-		font-weight: 600;
-		color: var(--accent);
-		text-decoration: none;
-	}
-	.see-all:hover {
-		text-decoration: underline;
-	}
-
-	/* ── Features ── */
-	.features {
-		padding: 4em 0;
-		background: rgb(var(--gray-light));
-	}
-	.feature-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-		gap: 1.5em;
-	}
-	.feature-card {
-		background: white;
-		border-radius: 12px;
-		padding: 1.75em;
-		box-shadow: var(--box-shadow);
-	}
-	.feature-icon {
-		font-size: 2em;
-		margin-bottom: 0.65em;
-	}
-	.feature-card h3 {
-		font-size: 1.1em;
-		margin-bottom: 0.5em;
-	}
-	.feature-card p {
-		color: rgb(var(--gray));
-		font-size: 0.9em;
-		line-height: 1.55;
-		margin: 0;
-	}
-
-	/* ── Recent posts ── */
-	.recent-posts {
-		padding: 4em 0;
-	}
-	.post-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		gap: 1.5em;
-	}
-	.post-card {
-		background: white;
-		border: 1px solid rgb(var(--gray-light));
-		border-radius: 12px;
-		overflow: hidden;
-		text-decoration: none;
-		color: inherit;
-		transition: box-shadow 0.2s, transform 0.2s;
-	}
-	.post-card:hover {
-		box-shadow: var(--box-shadow);
-		transform: translateY(-3px);
-		color: inherit;
-	}
-	.post-thumb {
-		width: 100%;
-		height: 180px;
-		object-fit: cover;
-		border-radius: 0;
-	}
-	.post-body {
-		padding: 1.25em 1.5em 1.5em;
-	}
-	.post-date {
-		font-size: 0.8em;
-		color: rgb(var(--gray));
-		display: block;
-		margin-bottom: 0.4em;
-	}
-	.post-body h3 {
-		font-size: 1.1em;
-		margin-bottom: 0.4em;
-		line-height: 1.3;
-	}
-	.post-body p {
-		font-size: 0.88em;
-		color: rgb(var(--gray));
-		margin: 0;
-		line-height: 1.5;
-		display: -webkit-box;
-		-webkit-line-clamp: 3;
-		-webkit-box-orient: vertical;
-		overflow: hidden;
-	}
-
-	/* ── CTA ── */
-	.cta-section {
-		background: var(--accent);
-		padding: 5em 1.5em;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.25rem;
 		text-align: center;
-		color: white;
 	}
-	.cta-inner {
-		max-width: 600px;
-		margin: 0 auto;
+	@media (max-width: 640px) { .cost-grid { grid-template-columns: 1fr; } }
+	.cost-item {
+		padding: 1.25rem 1.5rem;
+		background: rgba(255,255,255,0.02);
+		border: 1px solid rgba(255,255,255,0.06);
+		border-radius: 16px;
 	}
-	.cta-section h2 {
-		color: white;
-		font-size: 2em;
-		margin-bottom: 0.5em;
+	.cost-item.cost-highlight {
+		background: rgba(52,211,153,0.04);
+		border-color: rgba(52,211,153,0.2);
 	}
-	.cta-section p {
-		color: rgba(255,255,255,0.85);
-		font-size: 1.05em;
-		margin-bottom: 2em;
+	.cost-label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 8px; }
+	.cost-price { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; }
+	.cost-red { color: rgba(251,113,133,0.7); }
+	.cost-amber { color: rgba(251,191,36,0.7); }
+	.cost-green { color: #34d399; }
+	.cost-note { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 6px; }
+
+	/* ── Shared section layout ── */
+	.section-pad { padding: 6rem 1.5rem; max-width: 1152px; margin: 0 auto; }
+	.section-center { text-align: center; margin-bottom: 3rem; }
+	.eyebrow { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(129,140,248,0.6); margin-bottom: 0.75rem; }
+	.section-h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 0; color: #fff; }
+	.section-sub { font-size: 0.875rem; color: rgba(255,255,255,0.35); max-width: 30rem; margin: 1rem auto 0; line-height: 1.65; }
+
+	/* ── Pain ── */
+	.pain-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.25rem;
 	}
-	.cta-buttons {
+	@media (max-width: 768px) { .pain-grid { grid-template-columns: 1fr; } }
+	.pain-card {
+		background: rgba(255,255,255,0.02);
+		border: 1px solid rgba(255,255,255,0.07);
+		border-radius: 16px;
+		padding: 1.5rem;
+	}
+	.pain-card h3 { font-size: 15px; font-weight: 900; margin-bottom: 6px; letter-spacing: -0.01em; }
+	.pain-card p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6; margin: 0; }
+	.pain-icon-wrap {
+		width: 36px; height: 36px;
+		border-radius: 10px;
+		display: flex; align-items: center; justify-content: center;
+		margin-bottom: 1rem;
+		border: 1px solid transparent;
+	}
+	.amber-icon { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.2); color: #fbbf24; }
+	.rose-icon { background: rgba(244,63,94,0.1); border-color: rgba(244,63,94,0.2); color: #fb7185; }
+	.orange-icon { background: rgba(249,115,22,0.1); border-color: rgba(249,115,22,0.2); color: #fb923c; }
+	.violet-icon { background: rgba(139,92,246,0.1); border-color: rgba(139,92,246,0.2); color: #a78bfa; }
+	.indigo-icon { background: rgba(99,102,241,0.1); border-color: rgba(99,102,241,0.2); color: #818cf8; }
+	.purple-icon { background: rgba(168,85,247,0.1); border-color: rgba(168,85,247,0.2); color: #c084fc; }
+	.pain-tagline { text-align: center; font-size: 13px; color: rgba(129,140,248,0.7); font-weight: 700; margin-top: 2rem; letter-spacing: 0.03em; }
+
+	/* ── Who it's for ── */
+	.who-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.25rem;
+	}
+	@media (max-width: 768px) { .who-grid { grid-template-columns: 1fr; } }
+	.who-card {
+		background: rgba(255,255,255,0.02);
+		border: 1px solid rgba(255,255,255,0.07);
+		border-radius: 16px;
+		padding: 1.5rem;
 		display: flex;
-		gap: 1em;
-		justify-content: center;
-		flex-wrap: wrap;
+		flex-direction: column;
+		gap: 1rem;
 	}
+	.who-icon-wrap { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; border: 1px solid transparent; }
+	.who-card h3 { font-size: 15px; font-weight: 900; letter-spacing: -0.01em; margin: 0 0 4px; }
+	.who-subtitle { font-size: 12px; font-weight: 700; line-height: 1.3; margin: 0; }
+	.amber-text { color: #fbbf24; }
+	.indigo-text { color: #818cf8; }
+	.purple-text { color: #c084fc; }
+	.violet-text { color: #a78bfa; }
+	.emerald-text { color: #34d399; }
+	.who-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+	.who-list li { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.4); }
+
+	/* ── Compare ── */
+	.compare-table {
+		background: rgba(255,255,255,0.02);
+		border: 1px solid rgba(255,255,255,0.07);
+		border-radius: 16px;
+		overflow: hidden;
+	}
+	.compare-header, .compare-row {
+		display: grid;
+		grid-template-columns: 2fr 1fr 1fr;
+	}
+	.compare-header { background: rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.07); }
+	.compare-col-feat, .compare-col-tools, .compare-col-tc { padding: 1rem 1.25rem; }
+	.compare-col-tools { border-left: 1px solid rgba(255,255,255,0.07); text-align: center; }
+	.compare-col-tc { border-left: 1px solid rgba(99,102,241,0.2); text-align: center; background: rgba(99,102,241,0.03); }
+	.compare-col-title { font-size: 11px; font-weight: 900; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.15em; }
+	.compare-col-title.tc-title { color: #818cf8; }
+	.compare-col-sub { font-size: 10px; color: rgba(255,255,255,0.2); margin-top: 3px; }
+	.compare-col-sub.tc-sub { color: rgba(129,140,248,0.4); }
+	.compare-row { border-bottom: 1px solid rgba(255,255,255,0.04); }
+	.compare-row:last-child { border-bottom: none; }
+	.compare-row:nth-child(even) { background: rgba(255,255,255,0.01); }
+	.compare-feat { padding: 12px 20px; font-size: 13px; color: rgba(255,255,255,0.5); }
+	.compare-val-tools, .compare-val-tc { padding: 12px 20px; display: flex; align-items: center; justify-content: center; border-left: 1px solid rgba(255,255,255,0.06); }
+	.compare-val-tc { border-left: 1px solid rgba(99,102,241,0.2); background: rgba(99,102,241,0.02); }
+	.check-sm { width: 16px; height: 16px; }
+	.check-sm.white30 { color: rgba(255,255,255,0.3); }
+	.check-sm.emerald { color: #34d399; }
+	.x-sm { width: 16px; height: 16px; color: rgba(255,255,255,0.15); }
+	.badge-limited { font-size: 10px; font-weight: 700; color: rgba(251,191,36,0.5); background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); border-radius: 100px; padding: 2px 8px; }
+
+	/* ── How It Works ── */
+	.hiw-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2.5rem;
+		align-items: center;
+		margin-bottom: 3rem;
+	}
+	@media (max-width: 900px) { .hiw-row { grid-template-columns: 1fr; } .hiw-row-reverse .hiw-mockup-first { order: -1; } }
+	.hiw-row-reverse .hiw-text { order: 2; }
+	.hiw-row-reverse .hiw-mockup-first { order: 1; }
+	@media (max-width: 900px) { .hiw-row-reverse .hiw-text { order: 1; } .hiw-row-reverse .hiw-mockup-first { order: 2; } }
+	.hiw-step-header { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; }
+	.hiw-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; border: 1px solid transparent; }
+	.step-num { font-size: 10px; font-weight: 900; color: rgba(255,255,255,0.2); letter-spacing: 0.25em; }
+	.hiw-text h3 { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 4px; }
+	.hiw-tagline { font-size: 13px; font-weight: 700; margin-bottom: 0.75rem; }
+	.hiw-desc { font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.7; margin-bottom: 1.25rem; }
+	.hiw-mockup { border-radius: 16px; padding: 1.25rem; border: 1px solid transparent; }
+	.violet-mockup { background: linear-gradient(to bottom, rgba(139,92,246,0.1), transparent); border-color: rgba(139,92,246,0.2); }
+	.indigo-mockup { background: linear-gradient(to bottom, rgba(99,102,241,0.1), transparent); border-color: rgba(99,102,241,0.2); }
+	.purple-mockup { background: linear-gradient(to bottom, rgba(168,85,247,0.1), transparent); border-color: rgba(168,85,247,0.2); }
+
+	/* Feed mockup */
+	.feed-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1rem; }
+	.feed-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; margin-bottom: 8px; }
+	.feed-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(167,139,250,0.6); flex-shrink: 0; margin-top: 5px; }
+	.feed-content { flex: 1; min-width: 0; }
+	.feed-title { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.7); line-height: 1.4; }
+	.feed-meta { font-size: 10px; color: rgba(255,255,255,0.25); margin-top: 2px; }
+	.trending-badge { flex-shrink: 0; font-size: 9px; font-weight: 900; color: #a78bfa; background: rgba(139,92,246,0.15); border: 1px solid rgba(139,92,246,0.2); border-radius: 100px; padding: 2px 8px; }
+	.feed-cta { width: 100%; padding-top: 4px; background: none; border: none; cursor: pointer; font-size: 11px; font-weight: 700; color: rgba(167,139,250,0.6); text-align: center; transition: color 0.15s; }
+	.feed-cta:hover { color: #a78bfa; }
+
+	/* Strategy mockup */
+	.strategy-mock { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 1rem; }
+	.strategy-topic { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.6); margin-bottom: 10px; }
+	.idea-list { display: flex; flex-direction: column; gap: 8px; }
+	.idea-item { padding: 10px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; }
+	.idea-title { font-size: 11px; font-weight: 900; color: rgba(255,255,255,0.75); line-height: 1.3; margin-bottom: 6px; }
+
+	/* Output mockup */
+	.output-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+	.output-item { border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 12px; background: rgba(255,255,255,0.02); }
+	.output-header { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+	.output-icon { width: 14px; height: 14px; }
+	.output-icon.emerald-icon { color: #34d399; }
+	.output-icon.purple-icon-sm { color: #c084fc; }
+	.output-type { font-size: 10px; font-weight: 900; color: rgba(255,255,255,0.5); }
+	.skeleton-lines { display: flex; flex-direction: column; gap: 6px; }
+	.sk-line { height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; }
+	.sk-full { width: 100%; }
+	.sk-4-5 { width: 80%; }
+	.sk-3-4 { width: 75%; }
+	.output-tag { font-size: 9px; font-weight: 700; margin-top: 8px; }
+	.emerald-tag { color: rgba(52,211,153,0.6); }
+	.purple-tag { color: rgba(192,132,252,0.6); }
+	.carousel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+	.carousel-cell { aspect-ratio: 1; border-radius: 2px; }
+	.icon-sm { width: 18px; height: 18px; }
+	.icon-md { width: 22px; height: 22px; }
+
+	/* ── Stats ── */
+	.stats-bar { padding: 2rem 1.5rem; border-top: 1px solid rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.04); }
+	.stats-inner { max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5rem; }
+	.stat-item { display: flex; align-items: center; gap: 8px; }
+	.stat-val { font-size: 18px; font-weight: 900; color: rgba(255,255,255,0.5); }
+	.stat-label { font-size: 12px; color: rgba(255,255,255,0.25); }
+
+	/* ── Content types ── */
+	.content-type-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.75rem;
+		margin-bottom: 1rem;
+	}
+	@media (max-width: 768px) { .content-type-grid { grid-template-columns: 1fr 1fr; } }
+	@media (max-width: 480px) { .content-type-grid { grid-template-columns: 1fr; } }
+	.ct-card {
+		display: flex;
+		align-items: flex-start;
+		gap: 14px;
+		background: rgba(255,255,255,0.02);
+		border: 1px solid rgba(255,255,255,0.07);
+		border-radius: 12px;
+		padding: 1rem;
+		transition: background 0.15s, border-color 0.15s;
+	}
+	.ct-card:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.12); }
+	.ct-icon-wrap { width: 32px; height: 32px; flex-shrink: 0; background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #818cf8; margin-top: 2px; }
+	.ct-title { font-size: 13px; font-weight: 900; letter-spacing: -0.01em; margin-bottom: 2px; }
+	.ct-desc { font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.5; }
+	.ct-footnotes { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.75rem; }
+	@media (max-width: 600px) { .ct-footnotes { grid-template-columns: 1fr; } }
+	.ct-note { padding: 12px 16px; border-radius: 12px; display: flex; align-items: flex-start; gap: 12px; }
+	.ct-note p { font-size: 12px; color: rgba(255,255,255,0.45); margin: 0; line-height: 1.5; }
+	.ct-note p strong { color: rgba(255,255,255,0.7); font-weight: 700; }
+	.purple-note { background: rgba(168,85,247,0.05); border: 1px solid rgba(168,85,247,0.15); }
+	.emerald-note { background: rgba(52,211,153,0.05); border: 1px solid rgba(52,211,153,0.15); }
+	.purple-text { color: #c084fc; }
+
+	/* ── Testimonials ── */
+	.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+	@media (max-width: 768px) { .testi-grid { grid-template-columns: 1fr; } }
+	.testi-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07); border-radius: 16px; padding: 1.75rem; display: flex; flex-direction: column; gap: 1.25rem; }
+	.testi-top { display: flex; align-items: center; justify-content: space-between; }
+	.stars { display: flex; gap: 2px; }
+	.star { width: 14px; height: 14px; color: #fbbf24; }
+	.metric-badge { font-size: 10px; font-weight: 900; color: #34d399; background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.2); border-radius: 100px; padding: 4px 10px; }
+	.testi-quote { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; font-style: italic; flex: 1; margin: 0; }
+	.testi-author { display: flex; align-items: center; gap: 12px; }
+	.testi-avatar { width: 32px; height: 32px; border-radius: 50%; background: rgba(99,102,241,0.2); border: 1px solid rgba(99,102,241,0.3); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900; color: #818cf8; flex-shrink: 0; }
+	.testi-name { font-size: 13px; font-weight: 700; color: #fff; }
+	.testi-role { font-size: 11px; color: rgba(255,255,255,0.3); }
+
+	/* ── Pricing ── */
+	.founding-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); border-radius: 100px; padding: 6px 16px; font-size: 11px; font-weight: 700; color: rgba(251,191,36,0.7); margin-top: 1rem; }
+	.pricing-anchor { text-align: center; font-size: 13px; color: rgba(255,255,255,0.3); margin: 1rem 0 2.5rem; }
+	.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+	@media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr; } }
+	.pricing-card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		padding: 1.75rem;
+		background: rgba(255,255,255,0.025);
+		border: 1px solid rgba(255,255,255,0.07);
+		border-radius: 16px;
+	}
+	.pricing-highlight {
+		background: rgba(255,255,255,0.05);
+		border-color: rgba(99,102,241,0.3);
+		box-shadow: 0 0 40px rgba(99,102,241,0.08);
+	}
+	.pricing-badge {
+		position: absolute;
+		top: -12px;
+		left: 50%;
+		transform: translateX(-50%);
+		background: linear-gradient(90deg, #6366f1, #a855f7);
+		color: #fff;
+		font-size: 10px;
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		padding: 4px 12px;
+		border-radius: 100px;
+		box-shadow: 0 0 16px rgba(99,102,241,0.4);
+		white-space: nowrap;
+	}
+	.pricing-header { margin-bottom: 1.5rem; }
+	.pricing-tier-label { font-size: 10px; font-weight: 900; color: rgba(255,255,255,0.3); letter-spacing: 0.2em; margin-bottom: 0.75rem; }
+	.pricing-price-row { display: flex; align-items: flex-end; gap: 4px; }
+	.pricing-price { font-size: 2.5rem; font-weight: 900; letter-spacing: -0.03em; }
+	.pricing-per { font-size: 13px; color: rgba(255,255,255,0.25); margin-bottom: 6px; }
+	.pricing-annual { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 4px; }
+	.pricing-scope { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+	.pricing-subtext { font-size: 11px; color: rgba(255,255,255,0.25); font-style: italic; margin-top: 8px; }
+	.pricing-features { list-style: none; padding: 0; margin: 0 0 2rem; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+	.pricing-features li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.5); }
+	.pricing-cta {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		border-radius: 12px;
+		font-size: 13px;
+		font-weight: 700;
+		text-align: center;
+		text-decoration: none;
+		transition: all 0.15s;
+		border: 1px solid rgba(255,255,255,0.08);
+		background: rgba(255,255,255,0.06);
+		color: #fff;
+	}
+	.pricing-cta:hover { background: rgba(255,255,255,0.1); color: #fff; }
+	.pricing-cta.pricing-cta-highlight {
+		background: #4f46e5;
+		border-color: transparent;
+		box-shadow: 0 0 20px rgba(99,102,241,0.25);
+	}
+	.pricing-cta.pricing-cta-highlight:hover { background: #6366f1; color: #fff; }
+	.pricing-see-all { text-align: center; margin-top: 1.5rem; }
+	.pricing-see-all a { font-size: 12px; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.15s; }
+	.pricing-see-all a:hover { color: rgba(255,255,255,0.6); }
+
+	/* ── FAQ ── */
+	.faq-section { max-width: 768px !important; }
+	.faq-list { display: flex; flex-direction: column; gap: 8px; }
+	.faq-item {
+		border-radius: 12px;
+		border: 1px solid rgba(255,255,255,0.06);
+		background: rgba(255,255,255,0.015);
+		overflow: hidden;
+		transition: border-color 0.15s, background 0.15s;
+	}
+	.faq-item:hover { border-color: rgba(255,255,255,0.10); }
+	.faq-item.faq-open { border-color: rgba(255,255,255,0.12); background: rgba(255,255,255,0.03); }
+	.faq-q {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 1rem 1.25rem;
+		background: none;
+		border: none;
+		cursor: pointer;
+		text-align: left;
+	}
+	.faq-q span { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.75); }
+	.faq-chevron { width: 16px; height: 16px; color: rgba(255,255,255,0.3); flex-shrink: 0; transition: transform 0.2s; }
+	.faq-item.faq-open .faq-chevron { transform: rotate(180deg); }
+	.faq-a { padding: 0 1.25rem 1.25rem; }
+	.faq-a p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7; margin: 0; }
+
+	/* ── Final CTA ── */
+	.final-cta { position: relative; padding: 6rem 1.5rem; text-align: center; max-width: 768px; margin: 0 auto; }
+	.final-glow { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at center, rgba(99,102,241,0.12), transparent 70%); }
+	.final-inner { position: relative; z-index: 1; }
+	.final-h2 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1rem; }
+	.final-sub { color: rgba(255,255,255,0.4); font-size: 1rem; line-height: 1.7; font-weight: 500; max-width: 36rem; margin: 0 auto 1rem; }
+	.final-used { font-size: 13px; color: rgba(255,255,255,0.25); margin-bottom: 2.5rem; }
+	.final-join { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 2rem; }
+	.final-disclaimer { font-size: 12px; color: rgba(255,255,255,0.2); margin-top: 1rem; }
 </style>

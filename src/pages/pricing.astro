@@ -3,6 +3,68 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_TITLE } from '../consts';
+
+const TIERS = [
+	{
+		label: "FREE TRIAL",
+		price: 0,
+		annualPrice: 0,
+		brands: 1,
+		posts: 3,
+		highlight: false,
+		cta: "Try free — no credit card",
+		href: "mailto:hello@thinkingcats.com?subject=Free Trial",
+		features: [
+			"1 brand",
+			"3 posts to prove the concept",
+			"Full platform access",
+			"AI brand setup",
+			"Blog + carousel output",
+		],
+		subtext: "See what consistent marketing actually does for your business",
+	},
+	{
+		label: "STARTER",
+		price: 29,
+		annualPrice: 23,
+		brands: 3,
+		posts: 30,
+		highlight: true,
+		badge: "Most Popular",
+		cta: "Start for $29/mo",
+		href: "mailto:hello@thinkingcats.com?subject=Starter Plan",
+		features: [
+			"3 brands",
+			"30 posts/month",
+			"RSS market monitoring",
+			"AI campaign planning",
+			"Blog + carousel output",
+			"50+ languages",
+			"Email support",
+		],
+		subtext: "Less than a single social media ad — for 30 AI posts/month",
+	},
+	{
+		label: "PRO",
+		price: 99,
+		annualPrice: 79,
+		brands: 10,
+		posts: 150,
+		highlight: false,
+		cta: "Get Pro",
+		href: "mailto:hello@thinkingcats.com?subject=Pro Plan",
+		features: [
+			"10 brands",
+			"150 posts/month",
+			"Priority generation",
+			"Advanced analytics",
+			"Custom visual styles",
+			"API access",
+			"Priority support",
+		],
+		subtext: "Full AI content engine — at half the cost of a basic scheduler",
+	},
+] as const;
 ---
 
 <!doctype html>
@@ -16,38 +78,248 @@ import { SITE_TITLE } from '../consts';
 	<body>
 		<Header />
 
-		<main>
-			<div class="page-hero">
-				<h1>Simple pricing</h1>
-				<p>Start for free. Upgrade when you're ready.</p>
+		<main class="pricing-main">
+			<div class="pricing-hero">
+				<p class="eyebrow">Simple pricing</p>
+				<h1>Less than one hour with a consultant.<br />All month long.</h1>
+				<div class="founding-badge">Founding member pricing — available while in beta</div>
+				<p class="pricing-anchor">
+					A marketing consultant charges <span class="cost-red">$150–$300/hr</span>.
+					You get ThinkingCats the entire month for less.
+				</p>
 			</div>
 
-			<div class="plans">
-				<!-- Free -->
-				<div class="plan">
-					<div class="plan-header">
-						<h2>Free</h2>
-						<div class="plan-price">
-							<span class="price">$0</span>
-							<span class="per">/ forever</span>
+			<div class="pricing-grid">
+				{TIERS.map(({ label, price, annualPrice, brands, posts, highlight, badge, cta, href, features, subtext }) => (
+					<div class={`pricing-card ${highlight ? 'pricing-highlight' : ''}`}>
+						{badge && <div class="pricing-badge">{badge}</div>}
+						<div class="pricing-header">
+							<p class="pricing-tier-label">{label}</p>
+							<div class="pricing-price-row">
+								<span class="pricing-price">${price}</span>
+								{price > 0 && <span class="pricing-per">/mo</span>}
+							</div>
+							{price > 0 && <p class="pricing-annual">or ${annualPrice}/mo billed annually</p>}
+							<p class="pricing-scope">{brands} brand{brands !== 1 ? 's' : ''} · {posts} posts/mo</p>
+							<p class="pricing-subtext">{subtext}</p>
 						</div>
+						<ul class="pricing-features">
+							{features.map((f) => (
+								<li>
+									<svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+									{f}
+								</li>
+							))}
+						</ul>
+						<a href={href} class={`pricing-cta ${highlight ? 'pricing-cta-highlight' : ''}`}>{cta}</a>
 					</div>
-					<ul class="features">
-						<li>✅ All blog posts</li>
-						<li>✅ RSS feed</li>
-						<li>✅ Community access</li>
-						<li>❌ Premium guides</li>
-						<li>❌ Early access</li>
-						<li>❌ Newsletter digest</li>
-					</ul>
-					<a href="/blog" class="plan-cta outline">Start reading</a>
-				</div>
+				))}
+			</div>
 
-				<!-- Pro -->
-				<div class="plan featured">
-					<div class="plan-badge">Most popular</div>
-					<div class="plan-header">
-						<h2>Pro</h2>
+			<!-- FAQ -->
+			<div class="faq-section">
+				<h2>Common questions</h2>
+				<div class="faq-list" id="faq-list">
+					{[
+						{ q: "Can I cancel anytime?", a: "Yes — cancel whenever you like with no questions asked. No lock-in, no exit fees." },
+						{ q: "Is there a trial period?", a: "Yes. The Free Trial gives you 1 brand and 3 full posts to test the complete platform — blog and carousel output — with no credit card required." },
+						{ q: "Can I manage more than one business?", a: "Yes. The Starter plan supports 3 brands and the Pro plan supports 10 brands." },
+						{ q: "What payment methods do you accept?", a: "All major credit cards via Stripe. Invoice billing available on Pro." },
+						{ q: "How is this different from just using ChatGPT?", a: "ChatGPT requires you to already know what to create. ThinkingCats figures that out — it monitors your market, builds strategy, and generates content. You review and approve; it executes." },
+					].map(({ q, a }) => (
+						<div class="faq-item">
+							<button class="faq-q" aria-expanded="false">
+								<span>{q}</span>
+								<svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+							</button>
+							<div class="faq-a" hidden><p>{a}</p></div>
+						</div>
+					))}
+				</div>
+			</div>
+		</main>
+
+		<Footer />
+	</body>
+</html>
+
+<script>
+	document.querySelectorAll('.faq-q').forEach((btn) => {
+		btn.addEventListener('click', () => {
+			const item = btn.parentElement;
+			const answer = item?.querySelector('.faq-a') as HTMLElement | null;
+			const isOpen = btn.getAttribute('aria-expanded') === 'true';
+			document.querySelectorAll('.faq-item').forEach((el) => {
+				el.querySelector('.faq-q')?.setAttribute('aria-expanded', 'false');
+				const a = el.querySelector('.faq-a') as HTMLElement | null;
+				if (a) a.hidden = true;
+				el.classList.remove('faq-open');
+			});
+			if (!isOpen && answer) {
+				btn.setAttribute('aria-expanded', 'true');
+				answer.hidden = false;
+				item?.classList.add('faq-open');
+			}
+		});
+	});
+</script>
+
+<style>
+	.pricing-main {
+		max-width: 1100px;
+		margin: 0 auto;
+		padding: 8rem 1.5rem 5rem;
+	}
+	.pricing-hero {
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+	.eyebrow {
+		font-size: 11px;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		color: rgba(129,140,248,0.6);
+		margin-bottom: 0.75rem;
+	}
+	.pricing-hero h1 {
+		font-size: clamp(1.75rem, 4vw, 2.5rem);
+		font-weight: 900;
+		letter-spacing: -0.03em;
+		line-height: 1.15;
+		color: #fff;
+		margin-bottom: 1rem;
+	}
+	.founding-badge {
+		display: inline-flex;
+		gap: 8px;
+		background: rgba(245,158,11,0.1);
+		border: 1px solid rgba(245,158,11,0.2);
+		border-radius: 100px;
+		padding: 6px 16px;
+		font-size: 11px;
+		font-weight: 700;
+		color: rgba(251,191,36,0.7);
+		margin-bottom: 1rem;
+	}
+	.pricing-anchor {
+		font-size: 13px;
+		color: rgba(255,255,255,0.3);
+		margin: 0;
+	}
+	.cost-red { color: rgba(251,113,133,0.7); font-weight: 700; }
+
+	.pricing-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem;
+		margin-bottom: 5rem;
+	}
+	@media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr; } }
+
+	.pricing-card {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		padding: 1.75rem;
+		background: rgba(255,255,255,0.025);
+		border: 1px solid rgba(255,255,255,0.07);
+		border-radius: 16px;
+	}
+	.pricing-highlight {
+		background: rgba(255,255,255,0.05);
+		border-color: rgba(99,102,241,0.3);
+		box-shadow: 0 0 40px rgba(99,102,241,0.08);
+	}
+	.pricing-badge {
+		position: absolute;
+		top: -12px;
+		left: 50%;
+		transform: translateX(-50%);
+		background: linear-gradient(90deg, #6366f1, #a855f7);
+		color: #fff;
+		font-size: 10px;
+		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		padding: 4px 12px;
+		border-radius: 100px;
+		box-shadow: 0 0 16px rgba(99,102,241,0.4);
+		white-space: nowrap;
+	}
+	.pricing-header { margin-bottom: 1.5rem; }
+	.pricing-tier-label { font-size: 10px; font-weight: 900; color: rgba(255,255,255,0.3); letter-spacing: 0.2em; margin-bottom: 0.75rem; }
+	.pricing-price-row { display: flex; align-items: flex-end; gap: 4px; }
+	.pricing-price { font-size: 2.5rem; font-weight: 900; letter-spacing: -0.03em; color: #fff; }
+	.pricing-per { font-size: 13px; color: rgba(255,255,255,0.25); margin-bottom: 6px; }
+	.pricing-annual { font-size: 11px; color: rgba(255,255,255,0.25); margin-top: 4px; }
+	.pricing-scope { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+	.pricing-subtext { font-size: 11px; color: rgba(255,255,255,0.25); font-style: italic; margin-top: 8px; }
+	.pricing-features {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		flex: 1;
+	}
+	.pricing-features li { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,0.5); }
+	.check-icon { width: 14px; height: 14px; color: rgba(52,211,153,0.7); flex-shrink: 0; }
+	.pricing-cta {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		border-radius: 12px;
+		font-size: 13px;
+		font-weight: 700;
+		text-align: center;
+		text-decoration: none;
+		transition: all 0.15s;
+		border: 1px solid rgba(255,255,255,0.08);
+		background: rgba(255,255,255,0.06);
+		color: #fff;
+	}
+	.pricing-cta:hover { background: rgba(255,255,255,0.1); color: #fff; }
+	.pricing-cta.pricing-cta-highlight {
+		background: #4f46e5;
+		border-color: transparent;
+		box-shadow: 0 0 20px rgba(99,102,241,0.25);
+	}
+	.pricing-cta.pricing-cta-highlight:hover { background: #6366f1; color: #fff; }
+
+	/* FAQ */
+	.faq-section { max-width: 680px; margin: 0 auto; }
+	.faq-section h2 { font-size: 1.8rem; font-weight: 900; color: #fff; text-align: center; margin-bottom: 2rem; }
+	.faq-list { display: flex; flex-direction: column; gap: 8px; }
+	.faq-item {
+		border-radius: 12px;
+		border: 1px solid rgba(255,255,255,0.06);
+		background: rgba(255,255,255,0.015);
+		overflow: hidden;
+		transition: border-color 0.15s;
+	}
+	.faq-item:hover { border-color: rgba(255,255,255,0.1); }
+	.faq-item.faq-open { border-color: rgba(255,255,255,0.12); background: rgba(255,255,255,0.03); }
+	.faq-q {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 1rem 1.25rem;
+		background: none;
+		border: none;
+		cursor: pointer;
+		text-align: left;
+	}
+	.faq-q span { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.75); }
+	.faq-chevron { width: 16px; height: 16px; color: rgba(255,255,255,0.3); flex-shrink: 0; transition: transform 0.2s; }
+	.faq-item.faq-open .faq-chevron { transform: rotate(180deg); }
+	.faq-a { padding: 0 1.25rem 1.25rem; }
+	.faq-a p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7; margin: 0; }
+</style>
+
 						<div class="plan-price">
 							<span class="price">$9</span>
 							<span class="per">/ month</span>
