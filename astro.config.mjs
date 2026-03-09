@@ -8,9 +8,9 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://thinkingcats.com',
+  site: 'https://harisrafiq.github.io',
   integrations: [mdx(), sitemap()],
-  base: '/thinkingcats-landing/', // e.g., '/my-astro-site/'
+  base: '/thinkingcats-landing', // e.g., '/my-astro-site/'
 
   vite: {
     plugins: [tailwindcss()],
