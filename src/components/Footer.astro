@@ -13,7 +13,13 @@ const today = new Date();
 			<a href="/pricing">Pricing</a>
 			<a href="/blog">Blog</a>
 			<a href="/about">About</a>
+			<a href="/contact">Contact</a>
 			<a href="/rss.xml">RSS</a>
+		</nav>
+		<nav class="footer-links footer-links--legal">
+			<a href="/privacy">Privacy Policy</a>
+			<a href="/terms">Terms of Service</a>
+			<a href="/refund">Refund Policy</a>
 		</nav>
 		<p class="footer-copy">&copy; {today.getFullYear()} ThinkingCats</p>
 	</div>
@@ -28,10 +34,9 @@ const today = new Date();
 		max-width: 1152px;
 		margin: 0 auto;
 		display: flex;
+		flex-direction: column;
 		align-items: center;
-		justify-content: space-between;
-		flex-wrap: wrap;
-		gap: 1.5rem;
+		gap: 1.25rem;
 	}
 	.brand-link {
 		display: flex;
@@ -56,6 +61,11 @@ const today = new Date();
 		justify-content: center;
 		gap: 1.25rem;
 	}
+	.footer-links--legal a {
+		font-size: 11px;
+		color: rgba(255,255,255,0.15);
+	}
+	.footer-links--legal a:hover { color: rgba(255,255,255,0.4); }
 	.footer-links a {
 		font-size: 12px;
 		font-weight: 500;

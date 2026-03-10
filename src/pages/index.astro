@@ -8,7 +8,15 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title="ThinkingCats — AI Social Media Posts for Small Businesses" description={SITE_DESCRIPTION} />
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "ThinkingCats",
+			"url": "https://thinkingcats.com",
+			"logo": "https://thinkingcats.com/logo.png",
+			"description": SITE_DESCRIPTION
+		})} />
 	</head>
 	<body>
 		<Header />
@@ -25,16 +33,16 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				<div class="hero-left">
 					<div class="hero-pill">
 						<span class="pill-dot"></span>
-						AI Brand Activation Platform
+						AI Marketing Tool for Small Businesses
 					</div>
 
 					<h1 class="hero-h1">
-						Your brand,<br />
-						<span class="alive-word">alive.</span>
+						More Customers Find You —<br />
+						<span class="alive-word">30 Posts/Month, Is All It Takes.</span>
 					</h1>
 
 					<p class="hero-p">
-						Set up your brand once — AI logo, brand voice, and visual ambassadors included. Then brief your <strong>Director</strong>: paste URLs, attach images, connect an RSS feed, or describe a campaign. It reads everything, shapes the angle with you, and only creates content once you've <em>approved the direction.</em>
+						The businesses that show up consistently on social media and Google are the ones customers call first. ThinkingCats creates 30 on-brand posts a month for you — so you're always showing up, without it taking over your week. Describe your business once, and it handles the rest.
 					</p>
 
 					<div class="hero-actions">
@@ -47,13 +55,13 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 					<div class="hero-stats">
 						<div class="hstat">
-							<span class="hstat-val">10,000+</span>
-							<span class="hstat-label">Brands activated</span>
+							<span class="hstat-val">2×</span>
+							<span class="hstat-label">More enquiries, avg after 6 wks</span>
 						</div>
 						<div class="hstat-div"></div>
 						<div class="hstat">
-							<span class="hstat-val">4.9 ★</span>
-							<span class="hstat-label">Average rating</span>
+							<span class="hstat-val">10,000+</span>
+							<span class="hstat-label">Businesses posting consistently</span>
 						</div>
 						<div class="hstat-div"></div>
 						<div class="hstat">
@@ -87,11 +95,11 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 						</div>
 						<div class="orbit-chip chip-voice">
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="chip-icon"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/></svg>
-							<span>Brand Voice</span>
+							<span>Your Writing Style</span>
 						</div>
 						<div class="orbit-chip chip-director">
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="chip-icon"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-							<span>Director Agent</span>
+							<span>Content Advisor</span>
 						</div>
 						<div class="orbit-chip chip-carousel">
 							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="chip-icon"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
@@ -100,7 +108,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 						<!-- Floating generated-content card -->
 						<div class="float-card">
-							<p class="float-card-label">Director ready</p>
+							<p class="float-card-label">Content ready</p>
 							<p class="float-card-title">"5 signs your brand is invisible online"</p>
 							<div class="float-card-tags">
 								<span class="ftag">Blog</span>
@@ -127,11 +135,45 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				</div>
 				<div class="cost-item cost-highlight">
 					<p class="cost-label">ThinkingCats</p>
-					<p class="cost-val cost-green">from $29 / mo</p>
+					<p class="cost-val cost-green">from $23 / mo</p>
 					<p class="cost-note">Full platform · cancel anytime</p>
 				</div>
 			</div>
 		</div>
+
+		<!-- ══════════════════════════════════════════
+		     PAIN
+		══════════════════════════════════════════ -->
+		<section class="section-pad">
+			<div class="section-center">
+				<p class="eyebrow">The real problem</p>
+				<h2 class="section-h2">Marketing your brand shouldn't feel like a second job.</h2>
+			</div>
+			<div class="pain-grid">
+				<div class="pain-card">
+					<div class="pain-icon-wrap amber-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+					</div>
+					<h3>Not posting means customers pick your competitor</h3>
+					<p>When someone searches for what you do, the businesses that show up and post regularly get called first. You know you should be posting — but between running the business, weeks pass and nothing goes out.</p>
+				</div>
+				<div class="pain-card">
+					<div class="pain-icon-wrap rose-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+					</div>
+					<h3>You don't know what to post — or where to even start</h3>
+					<p>Even when you find the time, you sit there staring at a blank screen. What do I say? Will anyone care? Is this the right format? Most business owners give up and post nothing — or post once and then go quiet for weeks.</p>
+				</div>
+				<div class="pain-card">
+					<div class="pain-icon-wrap orange-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-sm"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+					</div>
+					<h3>Agencies are expensive and slow</h3>
+					<p>A retainer costs thousands a month, takes weeks to onboard, and still needs your input for every piece. You're paying for overhead, not output.</p>
+				</div>
+			</div>
+			<p class="pain-tagline">ThinkingCats posts for you every week — so new customers find you on Google, Instagram, and Facebook, and call you instead of your competitor.</p>
+		</section>
 
 		<!-- ══════════════════════════════════════════
 		     POSTS SHOWCASE — Auto-scrolling real output
@@ -164,7 +206,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 		<section class="identity-section">
 			<div class="section-wrap">
 				<div class="section-center">
-					<p class="eyebrow">Your brand identity, built by AI</p>
+					<p class="eyebrow">Your brand identity, enhanced by AI</p>
 					<h2 class="section-h2">One setup. <span class="grad">Three superpowers.</span></h2>
 					<p class="section-sub">Before your Copilot can create content, it needs to know who you are. Set up your brand once — and it never forgets.</p>
 				</div>
@@ -201,8 +243,8 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 							<p class="id-visual-label">Your brand voice, captured and remembered</p>
 						</div>
 						<div class="id-text">
-							<h3>Brand Voice Capture</h3>
-							<p>Describe your tone — bold and direct, warm and educational, premium and aspirational. Your Director uses it to shape every brief before a word is written.</p>
+							<h3>Your Writing Style</h3>
+							<p>Describe how you like to come across — casual and friendly, professional, or bold and direct. ThinkingCats remembers it and writes every post in your style automatically, without you having to explain it each time.</p>
 						</div>
 					</div>
 
@@ -214,8 +256,8 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 							</div>
 						</div>
 						<div class="id-text">
-							<h3>Brand Ambassador Library</h3>
-							<p>Upload real photos of your team or founder, or create stylised visual personas — a mascot, a spokesperson, an expert character. For each post, you pick which one to feature, so every piece of content feels intentional.</p>
+							<h3>Your Faces &amp; Characters</h3>
+							<p>Upload photos of yourself, your team, or your shopfront — or create an AI character (we call these Brand Ambassadors). ThinkingCats puts the right face on every post so your content looks consistent and recognisable, not like it came from a generic template.</p>
 						</div>
 					</div>
 				</div>
@@ -229,9 +271,9 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 			<div class="section-wrap director-layout">
 				<!-- Left: Explanation -->
 				<div class="director-text">
-					<p class="eyebrow">The Director Agent</p>
-					<h2 class="director-h2">Every post is <span class="grad">directed</span><br />before it's written.</h2>
-					<p class="director-desc">Your Director isn't a prompt box. It reads any source — URLs, images, RSS articles, or a plain-language brief — proposes an angle and format, then works with you to refine it. Iterate in plain language, pick your Brand Ambassador, and only approve once the direction feels right. Nothing is created until you say so.</p>
+					<p class="eyebrow">How it works — step by step</p>
+					<h2 class="director-h2">Every post is planned<br /><span class="grad">before anything is written.</span></h2>
+					<p class="director-desc">ThinkingCats has a built-in content advisor — we call it the Director. You tell it what you want to post about (or just paste a link), it suggests an angle and format, and you tweak it in plain language until it feels right. Then it writes. Nothing is created until you say so — no wasted output.</p>
 
 					<div class="dir-steps">
 						<div class="dstep">
@@ -245,7 +287,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 							<div class="dstep-num">02</div>
 							<div class="dstep-body">
 								<strong>Shape it together</strong>
-								<span>Director proposes an angle, format, and Brand Ambassador. Refine with plain language — as many rounds as you need — until the direction is exactly right.</span>
+								<span>The Director suggests an angle, post format, and which photo or character to feature. Refine in plain language — as many rounds as you need — until the direction is exactly right.</span>
 							</div>
 						</div>
 						<div class="dstep">
@@ -337,8 +379,8 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 				<!-- Right: Text -->
 				<div class="campaign-text-col">
-					<p class="eyebrow">Campaign Planner</p>
-					<h2 class="campaign-h2">Plan a full month of content<br /><span class="grad">in one session.</span></h2>
+					<p class="eyebrow">Monthly Content Planner</p>
+					<h2 class="campaign-h2">Plan a full month of posts<br /><span class="grad">in one session.</span></h2>
 					<p class="campaign-desc">Describe a topic or campaign goal in plain language. ThinkingCats generates a set of distinct ideas — each with a creative angle, a suggested visual style, and the right post type. Pick what fits, refine it, and send any idea straight to Director to create the post. Keep adding ideas any time without starting over.</p>
 					<div class="camp-list">
 						<div class="camp-item">
@@ -449,15 +491,15 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 					<p class="ct-label">Everything your Director can create</p>
 					<div class="ct-grid">
 						{[
-							{ title: "Brand Story", tag: "Blog + carousel" },
-							{ title: "Trend Commentary", tag: "Blog + carousel" },
-							{ title: "Thought Leadership", tag: "Blog" },
-							{ title: "Product Announcement", tag: "Social carousel" },
-							{ title: "Educational How-to", tag: "Blog + carousel" },
-							{ title: "Case Study", tag: "Blog" },
-							{ title: "Promotional Campaign", tag: "Social carousel" },
-							{ title: "Advertisement", tag: "Social carousel" },
-							{ title: "Market Update", tag: "Blog + carousel" },
+							{ title: "Brand Story"},
+							{ title: "Trend Commentary"},
+							{ title: "Thought Leadership" },
+							{ title: "Product Announcement"},
+							{ title: "Educational How-to" },
+							{ title: "Case Study" },
+							{ title: "Promotional Campaign"},
+							{ title: "Advertisement"},
+							{ title: "Market Update"},
 						].map(({ title, tag }) => (
 							<div class="ct-chip">
 								<span class="ct-title">{title}</span>
@@ -477,7 +519,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				<div class="sources-text">
 					<p class="eyebrow">Powered by any source</p>
 					<h2 class="sources-h2">Every source. <span class="grad">One Director.</span></h2>
-					<p class="sources-desc">Paste up to 5 URLs, attach reference images, connect RSS feeds, or write a brief in plain language. Whatever you feed your Director, it reads and synthesises everything into an on-brand content brief — before a single word is written.</p>
+					<p class="sources-desc">ThinkingCats watches your industry for trending topics so you always have something worth posting about. Paste a link, describe an idea in plain language, or pick from a live feed of relevant news. Your content advisor reads everything and turns it into a post plan — before a single word is written.</p>
 
 					<div class="src-list">
 						<div class="src-item">
@@ -494,8 +536,8 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
 							</div>
 							<div>
-								<strong>RSS feed monitoring + smart discovery</strong>
-								<span>Describe your niche and ThinkingCats suggests which feeds to follow. Spot a trending article and send it to Director in one click — pre-filled and ready to shape.</span>
+								<strong>Trending topic alerts</strong>
+								<span>Describe your industry and ThinkingCats monitors the top news sources for you. Spot a trending story and turn it into a post in one click — no tech knowledge needed.</span>
 							</div>
 						</div>
 						<div class="src-item">
@@ -555,14 +597,14 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 				<div class="section-center">
 					<p class="eyebrow">Why it's different</p>
 					<h2 class="section-h2">Writing tools write. <span class="grad">ThinkingCats thinks.</span></h2>
-					<p class="section-sub">Jasper and Copy.ai give you a blank prompt and hope for the best. ThinkingCats gives you a Director that reads any source, refines the angle with you, and lets you pick your Brand Ambassador — before anything is written.</p>
+					<p class="section-sub">Other AI tools give you a blank text box and hope for the best. ThinkingCats gives you a step-by-step content advisor that reads any source, works with you to shape the angle, and ensures every post sounds like your business — before anything is written.</p>
 				</div>
 				<div class="compare-table">
 					<div class="compare-head">
 						<div class="ch-feat"></div>
 						<div class="ch-tools">
 							<p class="ch-name">AI writing tools</p>
-							<p class="ch-sub">Jasper · Copy.ai · Buffer AI</p>
+							<p class="ch-sub">ChatGPT · Canva · social schedulers</p>
 						</div>
 						<div class="ch-tc">
 							<p class="ch-name ch-name-tc">ThinkingCats</p>
@@ -621,7 +663,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 					{[
 						{ quote: "I was spending 8 hours every Sunday writing posts. Now ThinkingCats generates them in under an hour — and they actually sound like me. Client enquiries doubled in 6 weeks.", name: "Maya Patel", role: "Owner, Glow & Ground Skincare", metric: "2× client enquiries", initial: "M" },
 						{ quote: "As a consultant I needed thought leadership without writing full-time. ThinkingCats mapped my strategy and I just execute. Signed 2 six-figure clients from LinkedIn alone.", name: "Sana Mirza", role: "Independent Strategy Consultant", metric: "2 six-figure clients", initial: "S" },
-						{ quote: "ThinkingCats flagged a trending topic two weeks before competitors. I published first, the post went everywhere, and I had 6 new enquiries that week. Nothing else does this.", name: "James Okafor", role: "Founder, Meridian Brand Studio", metric: "6 enquiries in one week", initial: "J" },
+						{ quote: "I'm a plumber — I had no idea about any of this marketing stuff. ThinkingCats just asked me about my business and started writing posts that sound exactly like me. I've had 4 new customers this month say they found me through my posts.", name: "Dan Kowalski", role: "Owner, Kowalski Plumbing & Heating", metric: "4 new customers from posts", initial: "D" },
 					].map(({ quote, name, role, metric, initial }) => (
 						<div class="tcard">
 							<div class="tcard-top">
@@ -696,7 +738,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 					<p class="eyebrow">Simple pricing</p>
 					<h2 class="section-h2">Less than one consulting hour. <span class="grad">All month long.</span></h2>
 					<div class="founding-pill">Founding member pricing — available while in beta</div>
-					<p class="pricing-anchor">A marketing consultant charges <span class="p-red">$150–$300/hr</span>. ThinkingCats gives you a full AI Brand Activation Platform — all month — for less.</p>
+					<p class="pricing-anchor">A marketing consultant charges <span class="p-red">$150–$300/hr</span>. ThinkingCats creates all your posts and blog content — all month — for less than one hour of their time.</p>
 				</div>
 
 
@@ -1147,6 +1189,37 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 	.cost-amber { color: rgba(251,191,36,0.8); }
 	.cost-green { color: var(--emerald); }
 	.cost-note { font-size: 11px; color: var(--text-3); margin-top: 4px; }
+
+	/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+	   PAIN SECTION
+	━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+	.section-pad { padding: 6rem 1.5rem; }
+	.section-center { text-align: center; margin-bottom: 3rem; }
+	.pain-grid {
+		display: grid; grid-template-columns: repeat(3, 1fr);
+		gap: 1.5rem; max-width: 1152px; margin: 0 auto;
+	}
+	@media (max-width: 768px) { .pain-grid { grid-template-columns: 1fr; } }
+	.pain-card {
+		padding: 2rem; border-radius: 16px;
+		background: var(--surface); border: 1px solid var(--border);
+		transition: background 0.15s, border-color 0.15s;
+	}
+	.pain-card:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.12); }
+	.pain-card h3 { font-size: 15px; font-weight: 900; color: #fff; margin-top: 16px; margin-bottom: 8px; }
+	.pain-card p { font-size: 14px; color: var(--text-3); line-height: 1.65; }
+	.pain-icon-wrap {
+		width: 40px; height: 40px; border-radius: 10px;
+		display: flex; align-items: center; justify-content: center;
+	}
+	.icon-sm { width: 20px; height: 20px; }
+	.amber-icon { background: rgba(251,191,36,0.1); color: #fbbf24; }
+	.rose-icon { background: rgba(251,113,133,0.1); color: #fb7185; }
+	.orange-icon { background: rgba(251,146,60,0.1); color: #fb923c; }
+	.pain-tagline {
+		text-align: center; margin-top: 2.5rem;
+		font-size: 15px; color: var(--text-3); font-weight: 500;
+	}
 
 	/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 	   BRAND IDENTITY

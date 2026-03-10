@@ -1,0 +1,145 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Refund Policy — ${SITE_TITLE}`} description="ThinkingCats refund and cancellation policy for digital subscription services." />
+	</head>
+	<body>
+		<Header />
+		<main class="compliance-main">
+			<div class="compliance-inner">
+
+				<a href="/" class="back-link">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+					<span>Back to Home</span>
+				</a>
+
+				<div class="page-header">
+					<div class="icon-badge icon-badge--pink">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon--pink"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+					</div>
+					<h1>Refund Policy</h1>
+				</div>
+
+				<div class="prose-body">
+
+					<section>
+						<h2>1. Digital Nature of Service</h2>
+						<p>ThinkingCats provides a digital service that involves the generation of AI personas and content. Due to the immediate and irreversible nature of AI compute resources and digital delivery, we have a strict refund policy.</p>
+					</section>
+
+					<section>
+						<h2>2. Subscription Refunds</h2>
+						<p>Subscriptions are generally non-refundable once the subscription period has started and AI generations have been used. If you have not used any credits or generated any content within 24 hours of purchase, you may request a refund by contacting support.</p>
+					</section>
+
+					<section>
+						<h2>3. Cancellation</h2>
+						<p>You may cancel your subscription at any time through your dashboard. Upon cancellation, you will retain access to the service until the end of your current billing period. No further charges will be made.</p>
+					</section>
+
+					<section>
+						<h2>4. Exceptions</h2>
+						<p>We may, at our sole discretion, provide refunds in exceptional circumstances such as technical failures that prevent the service from functioning or accidental double-billing.</p>
+					</section>
+
+					<section>
+						<h2>5. Delivery Policy</h2>
+						<p>ThinkingCats does not sell physical goods. All services are delivered digitally through the website dashboard immediately upon generation or subscription activation. There are no shipping or handling fees.</p>
+					</section>
+
+					<section>
+						<h2>6. AI-Generated Content &amp; Refunds</h2>
+						<p>Refunds are not available on the basis that AI-generated content did not meet subjective quality expectations, contained factual inaccuracies, or resembled third-party works. As stated in our <a href="/terms">Terms of Service</a>, AI outputs are provided 'as is' and ThinkingCats makes no guarantees about the originality or copyright status of generated content. If you experience a technical failure that prevented generation from completing, contact support within 7 days for a case-by-case review.</p>
+					</section>
+
+					<section class="footer-note">
+						<p>Last updated: February 22, 2026. For any questions regarding refunds, please contact us at support@thinkingcats.com</p>
+					</section>
+
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	.compliance-main {
+		padding: 8rem 1.5rem 5rem;
+	}
+	.compliance-inner {
+		max-width: 768px;
+		margin: 0 auto;
+	}
+	.back-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
+		font-size: 13px;
+		font-weight: 500;
+		color: rgba(255,255,255,0.25);
+		text-decoration: none;
+		margin-bottom: 3rem;
+		transition: color 0.15s;
+	}
+	.back-link:hover { color: rgba(255,255,255,0.6); }
+	.back-link svg { transition: transform 0.15s; }
+	.back-link:hover svg { transform: translateX(-3px); }
+
+	.page-header {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 2.5rem;
+	}
+	.page-header h1 {
+		font-size: clamp(1.75rem, 5vw, 2.25rem);
+		font-weight: 900;
+		letter-spacing: -0.03em;
+		color: #fff;
+		margin: 0;
+	}
+
+	.icon-badge {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		border-radius: 12px;
+		flex-shrink: 0;
+	}
+	.icon-badge--pink { background: rgba(236,72,153,0.1); border: 1px solid rgba(236,72,153,0.2); }
+	.icon--pink { color: #f472b6; }
+
+	.prose-body {
+		color: rgba(255,255,255,0.6);
+		font-size: 0.9375rem;
+		line-height: 1.75;
+	}
+	.prose-body section { margin-bottom: 2.5rem; }
+	.prose-body h2 {
+		font-size: 1.125rem;
+		font-weight: 700;
+		color: #fff;
+		margin: 0 0 1rem;
+	}
+	.prose-body p { margin: 0 0 1rem; }
+	.prose-body strong { color: rgba(255,255,255,0.85); }
+	.prose-body a { color: #818cf8; text-decoration: none; }
+	.prose-body a:hover { text-decoration: underline; }
+
+	.footer-note {
+		padding-top: 2rem;
+		border-top: 1px solid rgba(255,255,255,0.05);
+		font-size: 12px !important;
+		color: rgba(255,255,255,0.3) !important;
+	}
+</style>
