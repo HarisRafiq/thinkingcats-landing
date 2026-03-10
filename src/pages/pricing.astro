@@ -9,60 +9,97 @@ const TIERS = [
 		label: "FREE TRIAL",
 		price: 0,
 		annualPrice: 0,
-		brands: 1,
+		brandsLabel: "1 brand",
 		posts: 3,
 		highlight: false,
 		cta: "Try free — no credit card",
-		href: "mailto:hello@thinkingcats.com?subject=Free Trial",
+		href: "https://ai.thinkingcats.com",
 		features: [
 			"1 brand",
-			"3 posts to prove the concept",
-			"Full platform access",
-			"AI brand setup",
+			"3 posts — full output",
+			"Create your first Brand Ambassador",
+			"AI logo generation",
+			"Director agent",
+			"URL reader",
 			"Blog + carousel output",
 		],
-		subtext: "See what consistent marketing actually does for your business",
+		subtext: "See what consistent, on-brand marketing actually feels like",
 	},
 	{
 		label: "STARTER",
 		price: 29,
 		annualPrice: 23,
-		brands: 3,
+		brandsLabel: "3 brands",
 		posts: 30,
 		highlight: true,
 		badge: "Most Popular",
 		cta: "Start for $29/mo",
-		href: "mailto:hello@thinkingcats.com?subject=Starter Plan",
+		href: "https://ai.thinkingcats.com",
 		features: [
 			"3 brands",
 			"30 posts/month",
-			"RSS market monitoring",
-			"AI campaign planning",
+			"Multiple Brand Ambassadors per brand",
+			"AI logo generation",
+			"Director — choose your Brand Ambassador per post",
+			"URL reader — paste any link",
+			"RSS feed monitoring",
+			"Campaign + direct creation",
 			"Blog + carousel output",
 			"50+ languages",
 			"Email support",
 		],
-		subtext: "Less than a single social media ad — for 30 AI posts/month",
+		subtext: "Less than a single social media ad — for 30 on-brand posts/month",
 	},
 	{
 		label: "PRO",
 		price: 99,
 		annualPrice: 79,
-		brands: 10,
+		brandsLabel: "10 brands",
 		posts: 150,
 		highlight: false,
 		cta: "Get Pro",
-		href: "mailto:hello@thinkingcats.com?subject=Pro Plan",
+		href: "https://ai.thinkingcats.com",
 		features: [
 			"10 brands",
 			"150 posts/month",
+			"Multiple Brand Ambassadors per brand",
+			"AI logo generation",
+			"Director — choose your Brand Ambassador per post",
+			"URL reader + RSS monitoring",
+			"Campaign + direct creation",
+			"Blog + carousel output",
 			"Priority generation",
-			"Advanced analytics",
 			"Custom visual styles",
 			"API access",
 			"Priority support",
 		],
 		subtext: "Full AI content engine — at half the cost of a basic scheduler",
+	},
+	{
+		label: "AGENCY",
+		price: 299,
+		annualPrice: 239,
+		brandsLabel: "Unlimited brands",
+		posts: 500,
+		highlight: false,
+		badge: "Best for agencies",
+		cta: "Contact us",
+		href: "https://ai.thinkingcats.com",
+		features: [
+			"Unlimited brands",
+			"500 posts/month",
+			"Multiple Brand Ambassadors per brand",
+			"AI logo generation per brand",
+			"Director — choose your Brand Ambassador per post",
+			"URL reader + RSS monitoring",
+			"White-label output",
+			"Custom visual styles per brand",
+			"API access",
+			"Dedicated account manager",
+			"Invoice billing",
+			"Priority support",
+		],
+		subtext: "One plan. Unlimited clients. Scale output without scaling headcount.",
 	},
 ] as const;
 ---
@@ -81,26 +118,33 @@ const TIERS = [
 		<main class="pricing-main">
 			<div class="pricing-hero">
 				<p class="eyebrow">Simple pricing</p>
-				<h1>Less than one hour with a consultant.<br />All month long.</h1>
+				<h1>Your AI Marketing Copilot.<br />All month long, for less than one consulting hour.</h1>
 				<div class="founding-badge">Founding member pricing — available while in beta</div>
 				<p class="pricing-anchor">
 					A marketing consultant charges <span class="cost-red">$150–$300/hr</span>.
-					You get ThinkingCats the entire month for less.
+					ThinkingCats sets up your brand identity, reads any URL or RSS feed,
+					and delivers on-brand content — all month, for less than one hour of consulting.
 				</p>
 			</div>
-
+		<div class="billing-toggle-wrap">
+			<div class="billing-toggle">
+				<button class="toggle-btn active" data-billing="annual">Annual</button>
+				<button class="toggle-btn" data-billing="monthly">Monthly</button>
+			</div>
+			<span class="save-chip">Save ~20%</span>
+		</div>
 			<div class="pricing-grid">
-				{TIERS.map(({ label, price, annualPrice, brands, posts, highlight, badge, cta, href, features, subtext }) => (
+				{TIERS.map(({ label, price, annualPrice, brandsLabel, posts, highlight, badge, cta, href, features, subtext }) => (
 					<div class={`pricing-card ${highlight ? 'pricing-highlight' : ''}`}>
 						{badge && <div class="pricing-badge">{badge}</div>}
 						<div class="pricing-header">
 							<p class="pricing-tier-label">{label}</p>
 							<div class="pricing-price-row">
-								<span class="pricing-price">${price}</span>
-								{price > 0 && <span class="pricing-per">/mo</span>}
-							</div>
-							{price > 0 && <p class="pricing-annual">or ${annualPrice}/mo billed annually</p>}
-							<p class="pricing-scope">{brands} brand{brands !== 1 ? 's' : ''} · {posts} posts/mo</p>
+							<span class="pricing-price" data-price-monthly={String(price)} data-price-annual={String(annualPrice)}>${annualPrice > 0 ? annualPrice : price}</span>
+							{price > 0 && <span class="pricing-per">/mo</span>}
+						</div>
+						{price > 0 && <p class="pricing-annual" data-note-annual="billed annually" data-note-monthly={`or $${annualPrice}/mo billed annually`}>billed annually</p>}
+							<p class="pricing-scope">{brandsLabel} · {posts} posts/mo</p>
 							<p class="pricing-subtext">{subtext}</p>
 						</div>
 						<ul class="pricing-features">
@@ -111,7 +155,13 @@ const TIERS = [
 								</li>
 							))}
 						</ul>
-						<a href={href} class={`pricing-cta ${highlight ? 'pricing-cta-highlight' : ''}`}>{cta}</a>
+						<a
+						href={href}
+						class={`pricing-cta ${highlight ? 'pricing-cta-highlight' : ''}`}
+						data-monthly-cta={cta}
+						data-annual-cta={price > 0 && cta.includes('/mo') ? 'Start for $' + annualPrice + '/mo' : cta}>
+						{price > 0 && cta.includes('/mo') ? 'Start for $' + annualPrice + '/mo' : cta}
+					</a>
 					</div>
 				))}
 			</div>
@@ -121,11 +171,14 @@ const TIERS = [
 				<h2>Common questions</h2>
 				<div class="faq-list" id="faq-list">
 					{[
+						{ q: "What are Brand Ambassadors?", a: "Brand Ambassadors are visual personas that embody your brand's voice and style — a founder character, a mascot, a spokesperson, whatever fits. Each brand can have multiple. In Director mode, you choose which Brand Ambassador and images to use for each specific post. The result is consistent, visually on-brand content without re-explaining your brand identity every time." },
+						{ q: "How does the URL reader work?", a: "Paste any URL — an article, competitor page, product listing, or industry report — and ThinkingCats reads it and extracts the key insights. Your Director agent then works with you to shape the angle and confirm the direction. Once you approve — and pick which Brand Ambassador and images to use — it produces the post in your exact voice. No prompts to write, no copy-pasting." },
+						{ q: "What's the RSS feed monitoring for?", a: "Connect any RSS feed — industry news, competitor blogs, trade publications — and ThinkingCats monitors them for you. When something worth reacting to surfaces, your Director agent brings it to you, helps you shape the angle, and only then creates the content. You stay in control; you just never miss a relevant moment." },
 						{ q: "Can I cancel anytime?", a: "Yes — cancel whenever you like with no questions asked. No lock-in, no exit fees." },
-						{ q: "Is there a trial period?", a: "Yes. The Free Trial gives you 1 brand and 3 full posts to test the complete platform — blog and carousel output — with no credit card required." },
-						{ q: "Can I manage more than one business?", a: "Yes. The Starter plan supports 3 brands and the Pro plan supports 10 brands." },
-						{ q: "What payment methods do you accept?", a: "All major credit cards via Stripe. Invoice billing available on Pro." },
-						{ q: "How is this different from just using ChatGPT?", a: "ChatGPT requires you to already know what to create. ThinkingCats figures that out — it monitors your market, builds strategy, and generates content. You review and approve; it executes." },
+						{ q: "Is there a trial period?", a: "Yes. The Free Trial gives you 1 brand and 3 full posts — including your first Brand Ambassador, AI logo generation, and full blog + carousel output — with no credit card required." },
+						{ q: "Can I manage more than one business?", a: "Yes. Starter supports 3 brands, Pro supports 10, and Agency supports unlimited brands — each with their own multiple Brand Ambassadors, AI-generated logo, and distinct voice." },
+						{ q: "What payment methods do you accept?", a: "All major credit cards via Stripe. Invoice billing available on Agency plans." },
+						{ q: "How is this different from just using ChatGPT?", a: "ChatGPT is a blank prompt — you have to know what to create, write the brief yourself, and hope the output matches your brand. ThinkingCats gives you a Director agent that reads any source, refines the angle with you, and only creates content once you've approved the direction. Plus your Brand Ambassadors ensure every output sounds like you, not like generic AI." },
 					].map(({ q, a }) => (
 						<div class="faq-item">
 							<button class="faq-q" aria-expanded="false">
@@ -144,6 +197,27 @@ const TIERS = [
 </html>
 
 <script>
+	// Billing toggle
+	const billingBtns = document.querySelectorAll('.toggle-btn');
+	billingBtns.forEach(btn => {
+		btn.addEventListener('click', () => {
+			const billing = (btn as HTMLButtonElement).dataset.billing || 'annual';
+			billingBtns.forEach(b => b.classList.toggle('active', (b as HTMLButtonElement).dataset.billing === billing));
+			document.querySelectorAll('[data-price-monthly][data-price-annual]').forEach(el => {
+				const e = el as HTMLElement;
+				e.textContent = '$' + (billing === 'annual' ? e.dataset.priceAnnual : e.dataset.priceMonthly);
+			});
+			document.querySelectorAll('[data-note-annual][data-note-monthly]').forEach(el => {
+				const e = el as HTMLElement;
+				e.textContent = billing === 'annual' ? (e.dataset.noteAnnual || '') : (e.dataset.noteMonthly || '');
+			});
+			document.querySelectorAll('[data-monthly-cta][data-annual-cta]').forEach(el => {
+				const e = el as HTMLElement;
+				e.textContent = billing === 'annual' ? (e.dataset.annualCta || '') : (e.dataset.monthlyCta || '');
+			});
+		});
+	});
+
 	document.querySelectorAll('.faq-q').forEach((btn) => {
 		btn.addEventListener('click', () => {
 			const item = btn.parentElement;
@@ -169,6 +243,45 @@ const TIERS = [
 		max-width: 1100px;
 		margin: 0 auto;
 		padding: 8rem 1.5rem 5rem;
+	}
+	.billing-toggle-wrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 12px;
+		margin-bottom: 2rem;
+	}
+	.billing-toggle {
+		display: flex;
+		background: rgba(255,255,255,0.05);
+		border: 1px solid rgba(255,255,255,0.08);
+		border-radius: 100px;
+		padding: 4px;
+		gap: 2px;
+	}
+	.toggle-btn {
+		padding: 6px 18px;
+		border-radius: 100px;
+		border: none;
+		background: none;
+		color: rgba(255,255,255,0.4);
+		font-size: 13px;
+		font-weight: 600;
+		cursor: pointer;
+		transition: all 0.15s;
+	}
+	.toggle-btn.active {
+		background: rgba(255,255,255,0.12);
+		color: #fff;
+	}
+	.save-chip {
+		font-size: 10px;
+		font-weight: 700;
+		color: rgba(52,211,153,0.8);
+		background: rgba(52,211,153,0.1);
+		border: 1px solid rgba(52,211,153,0.2);
+		border-radius: 100px;
+		padding: 3px 10px;
 	}
 	.pricing-hero {
 		text-align: center;
@@ -211,11 +324,12 @@ const TIERS = [
 
 	.pricing-grid {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		gap: 1.5rem;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.25rem;
 		margin-bottom: 5rem;
 	}
-	@media (max-width: 768px) { .pricing-grid { grid-template-columns: 1fr; } }
+	@media (max-width: 1024px) { .pricing-grid { grid-template-columns: repeat(2, 1fr); } }
+	@media (max-width: 600px) { .pricing-grid { grid-template-columns: 1fr; } }
 
 	.pricing-card {
 		position: relative;
@@ -318,221 +432,4 @@ const TIERS = [
 	.faq-item.faq-open .faq-chevron { transform: rotate(180deg); }
 	.faq-a { padding: 0 1.25rem 1.25rem; }
 	.faq-a p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7; margin: 0; }
-</style>
-
-						<div class="plan-price">
-							<span class="price">$9</span>
-							<span class="per">/ month</span>
-						</div>
-					</div>
-					<ul class="features">
-						<li>✅ All blog posts</li>
-						<li>✅ RSS feed</li>
-						<li>✅ Community access</li>
-						<li>✅ Premium guides</li>
-						<li>✅ Early access to content</li>
-						<li>✅ Weekly newsletter digest</li>
-					</ul>
-					<a href="mailto:hello@thinkingcats.com?subject=Pro plan" class="plan-cta primary">Get Pro</a>
-				</div>
-
-				<!-- Team -->
-				<div class="plan">
-					<div class="plan-header">
-						<h2>Team</h2>
-						<div class="plan-price">
-							<span class="price">$39</span>
-							<span class="per">/ month</span>
-						</div>
-					</div>
-					<ul class="features">
-						<li>✅ Everything in Pro</li>
-						<li>✅ Up to 10 seats</li>
-						<li>✅ Private Slack channel</li>
-						<li>✅ Custom research requests</li>
-						<li>✅ Invoice billing</li>
-						<li>✅ Priority support</li>
-					</ul>
-					<a href="mailto:hello@thinkingcats.com?subject=Team plan" class="plan-cta outline">Contact us</a>
-				</div>
-			</div>
-
-			<div class="faq">
-				<h2>FAQ</h2>
-				<div class="faq-list">
-					<details>
-						<summary>Can I cancel anytime?</summary>
-						<p>Yes — cancel whenever you like with no questions asked.</p>
-					</details>
-					<details>
-						<summary>Is there a trial period?</summary>
-						<p>The Free tier lets you read all public content forever. Paid plans can be cancelled within 7 days for a full refund.</p>
-					</details>
-					<details>
-						<summary>Do you offer discounts for students?</summary>
-						<p>Yes! Email us with proof of student status and we'll set you up with 50% off Pro.</p>
-					</details>
-					<details>
-						<summary>What payment methods do you accept?</summary>
-						<p>We accept all major credit cards via Stripe. Invoicing is available on Team plans.</p>
-					</details>
-				</div>
-			</div>
-		</main>
-
-		<Footer />
-	</body>
-</html>
-
-<style>
-	main {
-		width: 100%;
-		max-width: 1100px;
-		margin: 0 auto;
-		padding: 3em 1.5em;
-	}
-	.page-hero {
-		text-align: center;
-		margin-bottom: 3em;
-	}
-	.page-hero h1 {
-		font-size: 2.8em;
-		margin-bottom: 0.4em;
-	}
-	.page-hero p {
-		font-size: 1.1em;
-		color: rgb(var(--gray));
-		margin: 0;
-	}
-
-	/* Plans */
-	.plans {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-		gap: 1.5em;
-		margin-bottom: 4em;
-		align-items: start;
-	}
-	.plan {
-		background: white;
-		border: 2px solid rgb(var(--gray-light));
-		border-radius: 16px;
-		padding: 2em;
-		position: relative;
-	}
-	.plan.featured {
-		border-color: var(--accent);
-		box-shadow: 0 0 0 4px rgba(35,55,255,0.08);
-	}
-	.plan-badge {
-		position: absolute;
-		top: -0.75em;
-		left: 50%;
-		transform: translateX(-50%);
-		background: var(--accent);
-		color: white;
-		font-size: 0.78em;
-		font-weight: 700;
-		padding: 0.3em 0.9em;
-		border-radius: 100px;
-		white-space: nowrap;
-	}
-	.plan-header h2 {
-		font-size: 1.3em;
-		margin-bottom: 0.4em;
-	}
-	.plan-price {
-		display: flex;
-		align-items: baseline;
-		gap: 0.25em;
-		margin-bottom: 1.5em;
-	}
-	.price {
-		font-size: 2.5em;
-		font-weight: 800;
-	}
-	.per {
-		font-size: 0.95em;
-		color: rgb(var(--gray));
-	}
-	.features {
-		list-style: none;
-		padding: 0;
-		margin: 0 0 2em 0;
-		display: flex;
-		flex-direction: column;
-		gap: 0.65em;
-		font-size: 0.92em;
-	}
-	.plan-cta {
-		display: block;
-		text-align: center;
-		padding: 0.75em 1.5em;
-		border-radius: 8px;
-		font-weight: 600;
-		text-decoration: none;
-		font-size: 0.95em;
-		transition: all 0.15s;
-	}
-	.plan-cta.primary {
-		background: var(--accent);
-		color: white;
-	}
-	.plan-cta.primary:hover {
-		opacity: 0.88;
-		color: white;
-	}
-	.plan-cta.outline {
-		border: 2px solid rgb(var(--gray-light));
-		color: rgb(var(--black));
-	}
-	.plan-cta.outline:hover {
-		border-color: var(--accent);
-		color: var(--accent);
-	}
-
-	/* FAQ */
-	.faq {
-		max-width: 680px;
-		margin: 0 auto;
-	}
-	.faq h2 {
-		font-size: 1.8em;
-		margin-bottom: 1.25em;
-		text-align: center;
-	}
-	.faq-list {
-		display: flex;
-		flex-direction: column;
-		gap: 0.75em;
-	}
-	details {
-		border: 1px solid rgb(var(--gray-light));
-		border-radius: 10px;
-		padding: 1em 1.25em;
-	}
-	summary {
-		font-weight: 600;
-		cursor: pointer;
-		user-select: none;
-		list-style: none;
-		display: flex;
-		justify-content: space-between;
-		font-size: 0.95em;
-	}
-	summary::after {
-		content: "+";
-		font-size: 1.2em;
-		line-height: 1;
-		color: var(--accent);
-	}
-	details[open] summary::after {
-		content: "−";
-	}
-	details p {
-		margin: 0.75em 0 0;
-		font-size: 0.9em;
-		color: rgb(var(--gray));
-		line-height: 1.6;
-	}
 </style>

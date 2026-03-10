@@ -5,14 +5,13 @@ import { SITE_TITLE } from '../consts';
 <header class="site-header">
 	<nav class="site-nav">
 		<a href="/" class="site-logo">
-			<span class="logo-mark">TC</span>
-			<span>{SITE_TITLE}</span>
+			<img src="/logo.png" alt="ThinkingCats" class="site-logo-img" />
 		</a>
 		<div class="nav-links">
 			<a href="/blog" class="nav-link">Blog</a>
 			<a href="/pricing" class="nav-link">Pricing</a>
 			<a href="/about" class="nav-link nav-link-muted">About</a>
-			<a href="/pricing" class="nav-cta">Start for free</a>
+			<a href="https://ai.thinkingcats.com" class="nav-cta">Start for free</a>
 		</div>
 	</nav>
 </header>
@@ -48,19 +47,11 @@ import { SITE_TITLE } from '../consts';
 		text-decoration: none;
 		letter-spacing: -0.02em;
 	}
-	.site-logo:hover { color: #fff; }
-	.logo-mark {
-		width: 28px;
+	.site-logo:hover { opacity: 0.85; }
+	.site-logo-img {
 		height: 28px;
-		background: linear-gradient(135deg, #6366f1, #a855f7);
-		border-radius: 8px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-size: 10px;
-		font-weight: 900;
-		color: #fff;
-		letter-spacing: 0.03em;
+		width: auto;
+		display: block;
 	}
 	.nav-links {
 		display: flex;
